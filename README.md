@@ -53,7 +53,7 @@ class Test extends Controller
 
 Make sure you add the necessary classes and import the package correctly into your Laravel application. 
 
-``` ## Contributions
+Contributions
 
 We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:
 
