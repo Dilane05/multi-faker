@@ -51,7 +51,7 @@ class Test extends Controller
     }
 }
 
-Make sure you add the necessary classes and import the package correctly into your Laravel application.
+Make sure you add the necessary classes and import the package correctly into your Laravel application. ```
 
 ## Contributions
 
