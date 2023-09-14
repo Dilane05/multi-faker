@@ -40,14 +40,14 @@ To use this package, follow these steps:
 
     class Test extends Controller
     {
-    public function generateData(MultiFakerGenerator $faker)
+        public function generateData(MultiFakerGenerator $faker)
         {
             // Example of use
             $name = $faker->last_name();
             $address = $faker->address();
             // ...
         return view('data', compact('name', 'address'));
-    }
+        }
     }
 
     Make sure you add the necessary classes and import the package correctly into your Laravel application.  
