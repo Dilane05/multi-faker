@@ -1,7 +1,7 @@
 {
     "name": "cupidontech/multi-faker",
     "description": "Description de votre package",
-    "version": "1.0.0",
+    "version": "0.1.0-beta",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -19,6 +19,8 @@
             "Cupidontech\\MultiFaker\\": "src/"
         }
     },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
