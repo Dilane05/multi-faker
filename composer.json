@@ -11,14 +11,14 @@
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": ">=5.6"
     },
     "autoload": {
         "psr-4": {
             "Cupidontech\\MultiFaker\\": "src/"
         }
     },
-    "minimum-stability": "stable", 
+    "minimum-stability": "beta", 
     "prefer-stable": true,
     "extra": {
         "laravel": {
