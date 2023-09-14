@@ -33,13 +33,13 @@ e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
 
 To use this package, follow these steps:
 
-```php
-namespace App\Http\Controllers;
+    ```<? php
+    namespace App\Http\Controllers;
 
-use Cupidontech\MultiFaker\MultiFakerGenerator;
+    use Cupidontech\MultiFaker\MultiFakerGenerator;
 
-class Test extends Controller
-{
+    class Test extends Controller
+    {
     public function generateData(MultiFakerGenerator $faker)
     {
         // Example of use
@@ -49,11 +49,9 @@ class Test extends Controller
 
         return view('data', compact('name', 'address'));
     }
-}
+    }
 
-Make sure you add the necessary classes and import the package correctly into your Laravel application. 
-
----
+    Make sure you add the necessary classes and import the package correctly into your Laravel application.  
 
 ## Contributions
 
@@ -64,8 +62,6 @@ We welcome contributions from the community. If you would like to contribute to 
 3. Make your changes and commit them (`git commit -am 'Add new feature'`).
 4. Push the branch (`git push origin new-feature`).
 5. Create a pull request on GitHub.
-
----
 
 ## License
 
