@@ -2,6 +2,7 @@
     "name": "cupidontech/multi-faker",
     "description": "Description de votre package",
     "version": "0.1.0-beta",
+    "type": "library",
     "homepage" : "https://github.com/Dilane05/multi-faker",
     "license": "MIT",
     "authors": [
@@ -11,7 +12,7 @@
         }
     ],
     "require": {
-        "php": "~8.0"
+        "php": "^5.3.3 || ^7.0 || ^8.0"
     },
     "autoload": {
         "psr-4": {
