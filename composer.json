@@ -1,0 +1,29 @@
+{
+    "name": "cupidontech/multi-faker",
+    "description": "Description de votre package",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cupidontech",
+            "email": "cupidontech@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support" : ">-5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cupidontech\\MultiFaker\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cupidontech\\MultiFaker\\MultiFakerServiceProvider"
+            ]
+        }
+    }
+}
