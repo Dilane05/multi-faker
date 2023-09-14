@@ -17,6 +17,10 @@ Install the Package by the following command,
 
     composer require cupidontech/multi-faker
 
+If you encounter an error during package installation, just type this command:
+
+    composer require cupidontech/multi-faker --ignore-platform-reqs
+
 ## Add Provider
 
 Add the provider to your `config/app` into `provider` section if using lower version of laravel,
