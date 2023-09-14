@@ -15,6 +15,7 @@ Add the provider to your `config/app` into `provider` section if using lower ver
 
 ## Add the country configuration to your .env file
 
-MULTI_FAKER_DEFAULT_COUNTRY= {Country}
+    MULTI_FAKER_DEFAULT_COUNTRY= {Country}
+    
 //e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
 
