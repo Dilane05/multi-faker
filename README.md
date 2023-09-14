@@ -4,6 +4,7 @@ Package for generating Faker by country
 ## Installation
 
 Install the Package by the following command,
+
     composer require cupidontech/multi-faker
 
 ## Add Provider
