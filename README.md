@@ -16,6 +16,10 @@ Add the provider to your `config/app` into `provider` section if using lower ver
 ## Add the country configuration to your .env file
 
     MULTI_FAKER_DEFAULT_COUNTRY= {Country}
-    
-//e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
+
+e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
+
+## License
+
+The MIT License, Please see <a href="#license"> License </a> File for more information
 
