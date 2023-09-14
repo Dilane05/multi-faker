@@ -54,19 +54,20 @@ class Test extends Controller
 
 Make sure you add the necessary classes and import the package correctly into your Laravel application.
 
-## Contributions
 
-We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:
+    ## Contributions
 
-1. Fork the project.
-2. Create a branch for your feature (`git checkout -b new-feature`).
-3. Make your changes and commit them (`git commit -am 'Add new feature'`).
-4. Push the branch (`git push origin new-feature`).
-5. Create a pull request on GitHub.
+    We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:
+
+    1. Fork the project.
+    2. Create a branch for your feature (`git checkout -b new-feature`).
+    3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+    4. Push the branch (`git push origin new-feature`).
+    5. Create a pull request on GitHub.
 
 
 
-## License
+    ## License
 
-This package is distributed under the [MIT] license. See [LICENSE.md](LICENSE.md) for details.
+    This package is distributed under the [MIT] license. See [LICENSE.md](LICENSE.md) for details.
 
