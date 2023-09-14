@@ -33,7 +33,7 @@ e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
 
 To use this package, follow these steps:
 
-    ```<? php
+    <? php
     namespace App\Http\Controllers;
 
     use Cupidontech\MultiFaker\MultiFakerGenerator;
@@ -41,12 +41,11 @@ To use this package, follow these steps:
     class Test extends Controller
     {
     public function generateData(MultiFakerGenerator $faker)
-    {
-        // Example of use
-        $name = $faker->last_name();
-        $address = $faker->address();
-        // ...
-
+        {
+            // Example of use
+            $name = $faker->last_name();
+            $address = $faker->address();
+            // ...
         return view('data', compact('name', 'address'));
     }
     }
