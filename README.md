@@ -72,6 +72,10 @@ use in a controller
 ## Local names
     $firstName = $faker->first_name();
     $lastName = $faker->last_name();
+
+## Gender
+    $gender = $faker->gender();
+
 ## Local addresses
     $address = $faker->address();
 ## Local phone numbers
