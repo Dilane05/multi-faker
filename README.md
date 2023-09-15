@@ -9,6 +9,7 @@ Package for generating Faker by country
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 - [Contributions](#Contributions)
+- [Formatters](#Formatters)
 
 
 ## Installation
@@ -37,6 +38,16 @@ e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
 
 To use this package, follow these steps:
 
+    use Cupidontech\MultiFaker\MultiFakerGenerator;
+
+    $faker = new MultiFakerGenerator();
+
+    $name = $faker->firstName();
+    $address = $faker->address();
+    $email = $faker->email();
+
+    use in a controller
+
     <? php
     namespace App\Http\Controllers;
 
@@ -56,6 +67,19 @@ To use this package, follow these steps:
 
     Make sure you add the necessary classes and import the package correctly into your Laravel application.  
 
+
+## Formatters
+    ## Local names
+        $firstName = $faker->firstName();
+        $lastName = $faker->lastName();
+
+    ##Local addresses
+        $address = $faker->address();
+
+## Countries supported
+
+Cameroon 
+Ivory Coast ,United States , Canada , Brazil , France , United Kingdom , Germany , Spain , Nigerai , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia (coming soon)
 ## Contributions
 
 We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:

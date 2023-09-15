@@ -38,12 +38,14 @@ class MultiFakerGenerator extends BaseGenerator
 
     public function __construct()
     {
-        $defaultCountry = env('MULTI_FAKER_DEFAULT_COUNTRY');
-        $country = Str::studly($defaultCountry);
-        $generatorClass = "Cupidontech\\MultiFaker\\{$country}FakerGenerator";
+        $country = env('MULTI_FAKER_DEFAULT_COUNTRY');
+        $countryFilter = new CountryFilter();
+        $continent = $countryFilter->getContinentByCountry($country);
+        $country = Str::studly($country);
+        $generatorClass = "Cupidontech\\MultiFaker\\Country\\{$continent}\\{$country}FakerGenerator";
 
         if (!class_exists($generatorClass)) {
-            throw new \Exception("Generator class for {$defaultCountry} does not exist.");
+            throw new \Exception("Generator class for {$country} does not exist.");
         }
 
         $this->countryGenerator = new $generatorClass();

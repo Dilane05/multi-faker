@@ -1,6 +1,6 @@
 <?php
 
-namespace Cupidontech\MultiFaker;
+namespace Cupidontech\MultiFaker\Country\Africa;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
@@ -8,6 +8,9 @@ use Faker\Generator as BaseGenerator;
 class CameroonFakerGenerator extends BaseGenerator
 {
     // Implémentez les méthodes de génération spécifiques au Cameroun ici
+
+    // Tableau de régions du Cameroun
+
 
     public function first_name()
     {
@@ -620,6 +623,12 @@ class CameroonFakerGenerator extends BaseGenerator
         return $lastNames[$randomIndex];
     }
 
+    function gender()
+    {
+        $genders = ['Male', 'Female'];
+        return $genders[array_rand($genders)];
+    }
+
     public function origins()
     {
         $origins = [
@@ -630,6 +639,70 @@ class CameroonFakerGenerator extends BaseGenerator
         return $origins[$randomIndex];
     }
 
+    // Fonction pour générer une région aléatoire
+    function region()
+    {
+        $regions = [
+            "Adamaoua",
+            "Centre",
+            "Est",
+            "Extrême-Nord",
+            "Littoral",
+            "Nord",
+            "Nord-Ouest",
+            "Ouest",
+            "Sud",
+            "Sud-Ouest"
+        ];
+
+        $regionAleatoire = $regions[array_rand($regions)];
+        return $regionAleatoire;
+    }
+
+    // Fonction pour générer une ville aléatoire en fonction de la région
+    function ville($region)
+    {
+        $villesParRegion = [
+            "Adamaoua" => ["Ngaoundéré", "Tibati", "Meiganga"],
+            "Centre" => ["Yaoundé", "Ebolowa", "Akonolinga"],
+            "Est" => ["Bertoua", "Batouri", "Abong-Mbang"],
+            "Extrême-Nord" => ["Maroua", "Mokolo", "Kousséri"],
+            "Littoral" => ["Douala", "Nkongsamba", "Edea"],
+            "Nord" => ["Garoua", "Poli", "Rey Bouba"],
+            "Nord-Ouest" => ["Bamenda", "Buea", "Kumbo"],
+            "Ouest" => ["Dschang", "Bafoussam", "Bafoussam"],
+            "Sud" => ["Ebolowa", "Sangmélima", "Meyomessala"],
+            "Sud-Ouest" => ["Buea", "Limbe", "Kumba"]
+        ];
+
+        $villeAleatoire = $villesParRegion[$region][array_rand($villesParRegion[$region])];
+        return $villeAleatoire;
+    }
+
+    public function villes()
+    {
+        $villes = [
+            "Yaoundé", "Douala", "Bafoussam", "Bamenda", "Dschang", "Ngaoundéré", "Garoua", "Limbe", "Kribi", "Bertoua", "Bafang", "Ebolowa", "Maroua", "Bamusso", "Tiko"
+        ];
+        return $villes[array_rand($villes)];
+    }
+
+    function coordonnees()
+    {
+        // Limites géographiques du Cameroun (latitude et longitude)
+        $limites = [
+            'nord' => 13.083333,   // Latitude Nord
+            'sud' => 2.333333,     // Latitude Sud
+            'ouest' => 8.483333,   // Longitude Ouest
+            'est' => 16.083333     // Longitude Est
+        ];
+
+        // Génération de coordonnées aléatoires dans les limites du Cameroun
+        $latitude = $limites['sud'] + mt_rand() / mt_getrandmax() * ($limites['nord'] - $limites['sud']);
+        $longitude = $limites['ouest'] + mt_rand() / mt_getrandmax() * ($limites['est'] - $limites['ouest']);
+
+        return ['latitude' => $latitude, 'longitude' => $longitude];
+    }
 
     public function address()
     {
@@ -641,6 +714,15 @@ class CameroonFakerGenerator extends BaseGenerator
                 'Boulevard de l\'Indépendance',
                 'Rue de la Paix',
                 'Avenue de la République',
+                'Logpom Eneo',
+                'Logpom Carrefour Andem',
+                'Logpom Fin goudron Bassong',
+                'Makepe rhone poulin',
+                'Makepe petit pays',
+                'Makepe IBM',
+                'Ndogbong Zachman',
+                'Ndogbong Carrefour Conquete',
+                'Beedi Hopital general'
             ],
             'Yaoundé, Centre' => [
                 'Boulevard de Yaoundé',
@@ -811,4 +893,88 @@ class CameroonFakerGenerator extends BaseGenerator
 
         return $username;
     }
+
+    function product()
+    {
+        // List of fictitious product names
+        $productNames = [
+            "Smartphone",
+            "Laptop",
+            "Tablet",
+            "TV",
+            "Headphones",
+            "Camera",
+            "Game Console",
+            "Bluetooth Speaker",
+            "Wireless Earbuds",
+            "Smartwatch",
+        ];
+    
+        // List of fictitious descriptions
+        $descriptions = [
+            "An excellent choice to stay connected at all times.",
+            "Exceptional performance in an elegant design.",
+            "The perfect tool for home entertainment.",
+            "Outstanding sound quality for an immersive experience.",
+            "Capture unforgettable moments with this camera.",
+            "Dive into the world of video games with this console.",
+            "Wirelessly stream music with superior quality.",
+            "Comfortable and convenient, these earbuds are a must-have.",
+            "Stay fit and connected with this smartwatch.",
+        ];
+    
+        // Possible product categories
+        $categories = ["Electronics", "Computers", "Audio", "Photography", "Gaming", "Accessories"];
+    
+        // Random generation of product data
+        $productName = $productNames[array_rand($productNames)];
+        $description = $descriptions[array_rand($descriptions)];
+        $price = mt_rand(50, 10000000); // Random price between 50 and 10,000,000 currency units
+        $category = $categories[array_rand($categories)];
+        $availability = mt_rand(0, 1) ? "In stock" : "Out of stock"; // Product in stock or out of stock
+    
+        // Creating an associative array representing the product
+        $product = [
+            "name" => $productName,
+            "description" => $description,
+            "price" => $price,
+            "category" => $category,
+            "availability" => $availability,
+        ];
+    
+        return $product;
+    }
+    
+
+    function food() {
+        $platsCamerounais = [
+            "Ndolé",
+            "Poulet DG",
+            "Sauce arachide",
+            "Achu",
+            "Sanga",
+            "Koki",
+            "Piment",
+            "Mbongo Tchobi",
+            "Corn chaff",
+            "Nkui",
+            "Sangah",
+            "Taranta",
+            "Eru",
+            "African Salad",
+            "Camerounian Jollof Rice",
+            'Okok',
+            'Chawarma',
+            'Poumseh',
+            'Pile',
+            'Pomme Rotir'
+        ];
+    
+        // Sélection aléatoire d'un nom de plat
+        $nomPlat = $platsCamerounais[array_rand($platsCamerounais)];
+    
+        return $nomPlat;
+    }
+    
+
 }
