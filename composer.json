@@ -1,7 +1,7 @@
 {
     "name": "cupidontech/multi-faker",
     "description": "Description de votre package",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "type": "library",
     "homepage" : "https://github.com/Dilane05/multi-faker",
     "license": "MIT",
