@@ -69,23 +69,41 @@ use in a controller
 
 
 ## Formatters
-## Local names
+# Local names
     $firstName = $faker->first_name();
     $lastName = $faker->last_name();
-
-## Gender
+# username
+    $username = $faker->username();
+# Gender
     $gender = $faker->gender();
-
-## Local addresses
+# Local addresses
     $address = $faker->address();
-## Local phone numbers
+# Local phone numbers
     $phoneNumber = $faker->phone();
-## Generation of city and region names
+# email
+    $email = $faker->email();
+# date
+    $date = $faker->date();
+# Generation of city and region names
     $region = $faker->region();
     $city = $faker->cities();
     $city = $faker->city($region);
-## Location
+# Location
     $region = $faker->region(); 
+# coordinates
+    $coordinates = $faker->coordinates();
+# password
+    $password = $faker->password();
+# text
+    $text = $faker->text(30);
+# companyName
+    $companyName = $faker->companyName();
+# creditCardNumber
+    $creditCardNumber = $faker->creditCardNumber();
+# product
+    $product = $faker->product();
+# food
+    $food = $faker->food();
 
 
 ## Countries supported

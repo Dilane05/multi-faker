@@ -687,7 +687,7 @@ class CameroonFakerGenerator extends BaseGenerator
         return $villes[array_rand($villes)];
     }
 
-    function coordonnees()
+    function coordinates()
     {
         // Limites géographiques du Cameroun (latitude et longitude)
         $limites = [
