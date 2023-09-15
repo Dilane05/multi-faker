@@ -70,11 +70,19 @@ use in a controller
 
 ## Formatters
 ## Local names
-    $firstName = $faker->firstName();
-    $lastName = $faker->lastName();
-
-##Local addresses
+    $firstName = $faker->first_name();
+    $lastName = $faker->last_name();
+## Local addresses
     $address = $faker->address();
+## Local phone numbers
+    $phoneNumber = $faker->phone();
+## Generation of city and region names
+    $region = $faker->region();
+    $city = $faker->cities();
+    $city = $faker->city($region);
+## Location
+    $region = $faker->region(); 
+
 
 ## Countries supported
 

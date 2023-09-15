@@ -660,7 +660,7 @@ class CameroonFakerGenerator extends BaseGenerator
     }
 
     // Fonction pour générer une ville aléatoire en fonction de la région
-    function ville($region)
+    function city($region)
     {
         $villesParRegion = [
             "Adamaoua" => ["Ngaoundéré", "Tibati", "Meiganga"],
@@ -679,7 +679,7 @@ class CameroonFakerGenerator extends BaseGenerator
         return $villeAleatoire;
     }
 
-    public function villes()
+    public function cities()
     {
         $villes = [
             "Yaoundé", "Douala", "Bafoussam", "Bamenda", "Dschang", "Ngaoundéré", "Garoua", "Limbe", "Kribi", "Bertoua", "Bafang", "Ebolowa", "Maroua", "Bamusso", "Tiko"
