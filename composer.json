@@ -1,6 +1,6 @@
 {
     "name": "cupidontech/multi-faker",
-    "description": "Description de votre package",
+    "description": "Package for generating Faker by country",
     "version": "1.0.0",
     "type": "library",
     "homepage" : "https://github.com/Dilane05/multi-faker",

@@ -1,7 +1,7 @@
 # multi-faker
 Package for generating Faker by country
 
-**Version :** 0.1.0-beta (in beta, currently being tested and developed)
+**Version :** 1.0.0 (in version 1.0.0 , currently being tested and developed)
 [![GitHub License](https://img.shields.io/github/license/Dilane05/multi-faker)](LICENSE.md)
 [![GitHub Release](https://img.shields.io/github/release/Dilane05/multi-faker)](https://github.com/Dilane05/multi-faker/releases)
 ## Table of Contents

@@ -25,7 +25,7 @@ class CameroonFakerGenerator extends BaseGenerator
             'Sylviane', 'Yannick', 'Bernadette', 'André', 'Nadia',
             'Hervé', 'Christiane', 'Luc', 'Yolande', 'Jérôme',
             'Edith', 'David', 'Patricia', 'René', 'Sophie',
-            'Philippe', 'Brigitte', 'Lucas', 'Jocelyne', 'Auguste',
+            'Philippe', 'Brigitte', 'Lucas', 'Jocelyne', 'Auguste','Dilane',
             // Ajout de plus de prénoms francophones
             'Antoine', 'Camille', 'Léa', 'Théo', 'Élise',
             'Victor', 'Manon', 'Nicolas', 'Margaux', 'Maxime',
