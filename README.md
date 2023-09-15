@@ -46,7 +46,7 @@ To use this package, follow these steps:
     $address = $faker->address();
     $email = $faker->email();
 
-    use in a controller
+        use in a controller
 
     <? php
     namespace App\Http\Controllers;
@@ -78,7 +78,7 @@ To use this package, follow these steps:
 
 ## Countries supported
 
-Cameroon 
+Cameroon <br>
 Ivory Coast ,United States , Canada , Brazil , France , United Kingdom , Germany , Spain , Nigerai , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia (coming soon)
 ## Contributions
 
