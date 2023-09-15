@@ -69,12 +69,12 @@ To use this package, follow these steps:
 
 
 ## Formatters
-    ## Local names
-        $firstName = $faker->firstName();
-        $lastName = $faker->lastName();
+## Local names
+    $firstName = $faker->firstName();
+    $lastName = $faker->lastName();
 
-    ##Local addresses
-        $address = $faker->address();
+##Local addresses
+    $address = $faker->address();
 
 ## Countries supported
 
