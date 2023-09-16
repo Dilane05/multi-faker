@@ -12,6 +12,7 @@ class CountryFilter
         $countryToContinent = [
             'Cameroon' => 'Africa',
             'IvoryCoast' => 'Africa',
+            'Nigeria' => 'Africa',
             'France' => 'Europe',
             'Germany' => 'Europe',
             // Ajoutez d'autres correspondances pays-continent au besoin
