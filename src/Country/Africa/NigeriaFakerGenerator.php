@@ -254,7 +254,7 @@ class NigeriaFakerGenerator extends BaseGenerator
     {
         $prefix = '+234';
 
-        // Générez le premier chiffre aléatoire parmi 7, 9 ou 8
+            // Générez le premier chiffre aléatoire parmi 7, 9 ou 8
         $firstDigit = [7, 9, 8][rand(0, 2)];
 
 
@@ -273,7 +273,7 @@ class NigeriaFakerGenerator extends BaseGenerator
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@234.com';
+        $suffix = '@234.ngr';
 
         return $username . $suffix;
     }

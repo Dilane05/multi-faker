@@ -33,8 +33,9 @@ Add the provider to your `config/app` into `provider` section if using lower ver
     MULTI_FAKER_DEFAULT_COUNTRY= {Country}
 
     e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
-
     e.g = MULTI_FAKER_DEFAULT_COUNTRY=Nigeria
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=France
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Canada
 
 ## Basic Usage
 
@@ -110,8 +111,8 @@ use in a controller
 
 ## Countries supported
 
-Cameroon <br>
-(coming soon) ... Ivory Coast ,United States , Canada , Brazil , France , United Kingdom , Germany , Spain , Nigerai , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia 
+Cameroon ,  Nigeria , France , Canada<br>
+(coming soon) ... Ivory Coast ,United States , Brazil , United Kingdom , Germany , Spain , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia 
 ## Contributions
 
 We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:

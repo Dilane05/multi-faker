@@ -660,7 +660,7 @@ class CameroonFakerGenerator extends BaseGenerator
     }
 
     // Fonction pour générer une ville aléatoire en fonction de la région
-    public function city($region)
+    function city($region)
     {
         $villesParRegion = [
             "Adamaoua" => ["Ngaoundéré", "Tibati", "Meiganga"],
@@ -687,7 +687,7 @@ class CameroonFakerGenerator extends BaseGenerator
         return $villes[array_rand($villes)];
     }
 
-    public function coordinates()
+    function coordinates()
     {
         // Limites géographiques du Cameroun (latitude et longitude)
         $limites = [
@@ -820,7 +820,7 @@ class CameroonFakerGenerator extends BaseGenerator
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@237.com';
+        $suffix = '@237.cm';
 
         return $username . $suffix;
     }
