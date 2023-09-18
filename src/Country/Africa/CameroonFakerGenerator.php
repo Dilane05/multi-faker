@@ -25,7 +25,7 @@ class CameroonFakerGenerator extends BaseGenerator
             'Sylviane', 'Yannick', 'Bernadette', 'André', 'Nadia',
             'Hervé', 'Christiane', 'Luc', 'Yolande', 'Jérôme',
             'Edith', 'David', 'Patricia', 'René', 'Sophie',
-            'Philippe', 'Brigitte', 'Lucas', 'Jocelyne', 'Auguste','Dilane',
+            'Philippe', 'Brigitte', 'Lucas', 'Jocelyne', 'Auguste',
             // Ajout de plus de prénoms francophones
             'Antoine', 'Camille', 'Léa', 'Théo', 'Élise',
             'Victor', 'Manon', 'Nicolas', 'Margaux', 'Maxime',
@@ -660,7 +660,7 @@ class CameroonFakerGenerator extends BaseGenerator
     }
 
     // Fonction pour générer une ville aléatoire en fonction de la région
-    function city($region)
+    public function city($region)
     {
         $villesParRegion = [
             "Adamaoua" => ["Ngaoundéré", "Tibati", "Meiganga"],
@@ -687,7 +687,7 @@ class CameroonFakerGenerator extends BaseGenerator
         return $villes[array_rand($villes)];
     }
 
-    function coordinates()
+    public function coordinates()
     {
         // Limites géographiques du Cameroun (latitude et longitude)
         $limites = [

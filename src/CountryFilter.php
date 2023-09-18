@@ -15,6 +15,7 @@ class CountryFilter
             'Nigeria' => 'Africa',
             'France' => 'Europe',
             'Germany' => 'Europe',
+            'UnitedState' => 'America',
             // Ajoutez d'autres correspondances pays-continent au besoin
         ];
 
