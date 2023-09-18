@@ -32,7 +32,9 @@ Add the provider to your `config/app` into `provider` section if using lower ver
 
     MULTI_FAKER_DEFAULT_COUNTRY= {Country}
 
-e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
+
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Nigeria
 
 ## Basic Usage
 
