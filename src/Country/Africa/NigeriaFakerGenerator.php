@@ -255,7 +255,7 @@ class NigeriaFakerGenerator extends BaseGenerator
         $prefix = '+234';
 
         // Générez le premier chiffre aléatoire parmi 7, 9 ou 8
-        $firstDigit = [7, 9, 8][rand(0, 4)];
+        $firstDigit = [7, 9, 8][rand(0, 2)];
 
 
         // Générez les 5 derniers chiffres aléatoires
