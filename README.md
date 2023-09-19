@@ -111,7 +111,7 @@ use in a controller
 
 ## Countries supported
 
-Cameroon ,  Nigeria , France , Canada<br>
+Cameroon ,  Nigeria , France , Canada , United State , Germany <br> <br>
 (coming soon) ... Ivory Coast ,United States , Brazil , United Kingdom , Germany , Spain , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia 
 ## Contributions
 
