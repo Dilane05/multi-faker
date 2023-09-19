@@ -1,11 +1,11 @@
 <?php
 
-namespace Cupidontech\MultiFaker\Country\Africa;
+namespace Cupidontech\MultiFaker\Country\America;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
 
-class UnitedStateFakerGenerator extends BaseGenerator
+class UnitedStatesFakerGenerator extends BaseGenerator
 {
     public function first_name()
     {
