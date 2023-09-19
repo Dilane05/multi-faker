@@ -97,6 +97,18 @@ class NigeriaFakerGenerator extends BaseGenerator
         return $genders[array_rand($genders)];
     }
 
+    public function name()
+    {
+
+        $firstName = $this->first_name;
+        $lastName = $this->last_name;
+
+        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
+        $name = strtolower($firstName . $lastName);
+
+        return $name;
+    }
+
     public function origins()
     {
         $origins = [

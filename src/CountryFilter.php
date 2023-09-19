@@ -20,6 +20,7 @@ class CountryFilter
             'Algeria' => 'Africa',
             'Marocco' => 'Africa',
             'IvoryCoast' => 'Africa',
+            'Nigeria' => 'Africa',
             'France' => 'Europe',
             'UnitedKingdom' => 'Europe',
             'Italy' => 'Europe',
@@ -30,6 +31,7 @@ class CountryFilter
             'Brazil' => 'America',
             'India' => 'Asia',
             'China' => 'Asia',
+            'UnitedState' => 'America',
             // Ajoutez d'autres correspondances pays-continent au besoin
         ];
 
