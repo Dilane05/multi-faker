@@ -36,6 +36,8 @@ Add the provider to your `config/app` into `provider` section if using lower ver
     e.g = MULTI_FAKER_DEFAULT_COUNTRY=Nigeria
     e.g = MULTI_FAKER_DEFAULT_COUNTRY=France
     e.g = MULTI_FAKER_DEFAULT_COUNTRY=Canada
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=UnitedStates
+    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Germany
 
 ## Basic Usage
 
