@@ -11,10 +11,26 @@ class CountryFilter
 
         $countryToContinent = [
             'Cameroon' => 'Africa',
+            'Nigeria' => 'Africa',
+            'Ghana' => 'Africa',
+            'Gabon' => 'Africa',
+            'Ethiopia' => 'Africa',
+            'SouthAfrica' => 'Africa',
+            'Kenya' => 'Africa',
+            'Algeria' => 'Africa',
+            'Marocco' => 'Africa',
             'IvoryCoast' => 'Africa',
             'Nigeria' => 'Africa',
             'France' => 'Europe',
+            'UnitedKingdom' => 'Europe',
+            'Italy' => 'Europe',
+            'Belgium' => 'Europe',
             'Germany' => 'Europe',
+            'UnitedStates' => 'America',
+            'Canada' => 'America',
+            'Brazil' => 'America',
+            'India' => 'Asia',
+            'China' => 'Asia',
             'UnitedState' => 'America',
             // Ajoutez d'autres correspondances pays-continent au besoin
         ];
