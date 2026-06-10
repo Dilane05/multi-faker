@@ -231,18 +231,13 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
 
     public function phone()
     {
-        $prefix = '+225';
-
-        // Générez le premier chiffre aléatoire parmi 01, 02, 03, 04, 05, 06 ou 07
-        $firstDigit = '0' . [1, 2, 3, 4, 5, 6, 7][rand(0, 6)];
-
-        // Générez les 6 derniers chiffres aléatoires
-        $secondPart = '';
-        for ($i = 0; $i < 6; $i++) {
-            $secondPart .= rand(0, 9);
-        }
-
-        return $prefix . $firstDigit  . $secondPart;
+        $prefixes = [
+            '07', '27',  // Orange CI
+            '05', '25',  // MTN CI
+            '01', '21',  // Moov Africa
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+225 %s %02d %02d %02d %02d', $prefix, rand(10, 99), rand(10, 99), rand(10, 99), rand(10, 99));
     }
 
     public function email()
@@ -276,27 +271,16 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
 
     public function companyName()
     {
-        $prefixes = [
-            'Ivoirienne', 'Abidjan', 'Cocody', 'Marcory', 'Plateau', 'Treichville', 'Yopougon', 'Adjamé', 'Koumassi', 'Port-Bouët',
-            'Treichville', 'Attécoubé', 'Korhogo', 'Bouaké', 'Daloa', 'Yamoussoukro', 'San Pedro', 'Man', 'Divo', 'Gagnoa',
-            'Abengourou', 'Bouaflé', 'Sassandra', 'Grand-Bassam', 'Bondoukou', 'Odienné', 'Seguela', 'Agboville', 'Bouna', 'Issia',
-            'Ferkessédougou', 'Dabou', 'Bangolo', 'Tingrela', 'Sinfra', 'Danané', 'Katiola', 'Toumodi', 'Daoukro', 'Sakassou',
-            'Tanda', 'Bonoua', 'Bingerville', 'Béoumi', 'Alepe', 'Adiaké', 'Lakota', 'Tiassalé', 'Djékanou', 'Facobly'
+        $companies = [
+            'MTN Côte d\'Ivoire', 'Orange Côte d\'Ivoire', 'Moov Africa Côte d\'Ivoire',
+            'BICICI', 'SGBCI', 'Ecobank Côte d\'Ivoire', 'NSIA Banque',
+            'Société Ivoirienne de Banque (SIB)', 'Banque Atlantique CI', 'UBA CI',
+            'Brasseries Ivoiriennes', 'Solibra', 'Air Côte d\'Ivoire',
+            'SODECI', 'CIE', 'Canal+ Côte d\'Ivoire', 'Total CI',
+            'SIFCA', 'SUCRIVOIRE', 'Nestlé CI', 'CFAO CI',
+            'Pharmacie Nationale', 'Université Mohammed VI Polytechnique', 'Wave CI',
         ];
-
-
-        $suffixes = [
-            'Ltd', 'PLC', 'LLC', 'LLP', 'Limited', 'PLC', 'LLC', 'LLP', 'Holdings', 'Group', 'Corp', 'Corporation', 'Services',
-            'Enterprises', 'Solutions', 'Global', 'Ventures', 'Industries', 'Integrators', 'Associates', 'Incorporated', 'Partners',
-            'Resources', 'Technologies', 'Logistics', 'Management', 'Consulting', 'Enterprises', 'Solutions', 'Group', 'Industries',
-            'Systems', 'Enterprises', 'Holdings', 'Development', 'Sustainable', 'Enterprises', 'Innovations', 'Foundation'
-
-        ];
-
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-
-        return "$prefix $suffix";
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -441,5 +425,46 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
         $nomPlat = $platsIvoiriens[array_rand($platsIvoiriens)];
 
         return $nomPlat;
+    }
+
+    public function university()
+    {
+        $universities = [
+            'Université Félix Houphouët-Boigny (Cocody)',
+            'Université Abobo-Adjamé', 'Université Jean Lorougnon Guédé (Daloa)',
+            'Université Alassane Ouattara (Bouaké)',
+            'Université Peleforo Gon Coulibaly (Korhogo)',
+            'Institut National Polytechnique Félix Houphouët-Boigny (INPHB)',
+            'École Nationale Supérieure d\'Ingénieurs (ENSI)',
+            'ESATIC', 'INPHB Yamoussoukro', 'Université de Man',
+            'Institut Supérieur des Sciences et Technologie d\'Abidjan (ISSTA)',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Cocody', 'Plateau', 'Marcory', 'Treichville', 'Yopougon',
+            'Abobo', 'Adjamé', 'Attécoubé', 'Koumassi', 'Port-Bouët',
+            'Bingerville', 'Riviera', '2 Plateaux', 'Angré', 'Danga',
+            'Blockhaus', 'Zone 4', 'Zone 3', 'Biétry', 'Vridi',
+            'Songon', 'Anyama', 'Alepo',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        $number = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        return $l1 . $l2 . ' ' . $number . ' CI';
+    }
+
+    public function nationalId()
+    {
+        return str_pad(rand(1, 9999999999), 10, '0', STR_PAD_LEFT);
     }
 }

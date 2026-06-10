@@ -258,19 +258,14 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function phone()
     {
-        $prefix = '+234';
-
-            // Générez le premier chiffre aléatoire parmi 7, 9 ou 8
-        $firstDigit = [7, 9, 8][rand(0, 2)];
-
-
-        // Générez les 5 derniers chiffres aléatoires
-        $secondPart = '';
-        for ($i = 0; $i < 10; $i++) {
-            $secondPart .= rand(0, 9);
-        }
-
-        return $prefix . $firstDigit  . $secondPart;
+        $prefixes = [
+            '0803', '0806', '0813', '0816', '0903', '0906',  // MTN
+            '0805', '0807', '0815', '0905',                   // Glo
+            '0802', '0808', '0812', '0902', '0907',           // Airtel
+            '0809', '0817', '0818', '0909',                   // 9mobile
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+234 %s %04d %04d', $prefix, rand(1000, 9999), rand(1000, 9999));
     }
 
     public function email()
@@ -304,26 +299,16 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function companyName()
     {
-        $prefixes = [
-
-            'Nigerian', 'Lagos', 'Abuja', 'Kano', 'Zenith', 'First', 'Access', 'Guaranty', 'Union', 'United', 'Fidelity',
-            'Diamond', 'Skye', 'Stanbic', 'Standard', 'Eco', 'Heritage', 'Keystone', 'Unity', 'Mainstreet', 'Wema',
-            'Jaiz', 'Sterling', 'SunTrust', 'Providus', 'Trust', 'Coronation', 'ASO', 'Capital', 'Sovereign', 'Fortis',
-            'Citi', 'Polaris', 'Rand', 'Ecobank', 'Unity', 'Enterprise', 'Legacy', 'Jaiz', 'Sun', 'Spring', 'VFD', 'Cititrust'
-
+        $companies = [
+            'MTN Nigeria', 'Airtel Nigeria', 'Glo Mobile', '9mobile',
+            'Dangote Group', 'Zenith Bank', 'Access Bank', 'First Bank Nigeria',
+            'GTBank', 'UBA Nigeria', 'NNPC', 'Nigerian Breweries', 'Nestlé Nigeria',
+            'Flour Mills Nigeria', 'Total Nigeria', 'Fidelity Bank', 'Stanbic IBTC',
+            'Union Bank', 'Wema Bank', 'Sterling Bank', 'Polaris Bank', 'Ecobank Nigeria',
+            'Coronation Bank', 'Providus Bank', 'SunTrust Bank', 'Globacom Nigeria',
+            'Innoson Vehicle Manufacturing', 'Dangote Cement', 'BUA Cement', 'Lafarge Africa',
         ];
-        $suffixes = [
-            'Ltd', 'PLC', 'LLC', 'LLP', 'Limited', 'PLC', 'LLC', 'LLP', 'Holdings', 'Group', 'Corp', 'Corporation', 'Services',
-            'Enterprises', 'Solutions', 'Global', 'Ventures', 'Industries', 'Integrators', 'Associates', 'Incorporated', 'Partners',
-            'Resources', 'Technologies', 'Logistics', 'Management', 'Consulting', 'Enterprises', 'Solutions', 'Group', 'Industries',
-            'Systems', 'Enterprises', 'Holdings', 'Development', 'Sustainable', 'Enterprises', 'Innovations', 'Foundation'
-
-        ];
-
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-
-        return "$prefix $suffix";
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -479,5 +464,47 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
         $nomPlat = $platsNigerian[array_rand($platsNigerian)];
 
         return $nomPlat;
+    }
+
+    public function university()
+    {
+        $universities = [
+            'University of Lagos (UNILAG)', 'University of Ibadan',
+            'Obafemi Awolowo University (OAU)', 'University of Nigeria Nsukka (UNN)',
+            'Ahmadu Bello University (ABU)', 'University of Benin (UNIBEN)',
+            'Lagos State University (LASU)', 'Covenant University',
+            'Babcock University', 'Pan-Atlantic University',
+            'Nnamdi Azikiwe University', 'University of Port Harcourt (UNIPORT)',
+            'Bayero University Kano (BUK)', 'Federal University of Technology Minna',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Victoria Island', 'Lekki', 'Ikoyi', 'Surulere', 'Ikeja',
+            'Yaba', 'Apapa', 'Maryland', 'Festac Town', 'Ajah',
+            'Gbagada', 'Magodo', 'Ojota', 'Ketu', 'Mushin', 'Oshodi',
+            'Maitama', 'Wuse', 'Garki', 'Asokoro', 'Gwarinpa',
+            'Jabi', 'Lugbe', 'Kubwa', 'Bwari', 'Kuje',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $states = ['LAG', 'ABJ', 'KAN', 'PHC', 'IBD', 'ABK', 'ENU', 'KAD', 'JOS', 'BEN'];
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $state = $states[array_rand($states)];
+        $number = rand(100, 999);
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        return $state . '-' . $number . $l1 . $l2;
+    }
+
+    public function nationalId()
+    {
+        return str_pad(rand(10000000000, 99999999999), 11, '0', STR_PAD_LEFT);
     }
 }
