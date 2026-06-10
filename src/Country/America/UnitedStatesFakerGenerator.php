@@ -4,8 +4,9 @@ namespace Cupidontech\MultiFaker\Country\America;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
+use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
-class UnitedStatesFakerGenerator extends BaseGenerator
+class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
     public function first_name()
     {
@@ -131,18 +132,9 @@ class UnitedStatesFakerGenerator extends BaseGenerator
     function region()
     {
         $regions = [
-            "Connecticut", "Maine", "Massachusetts", "New Hampshire", "Rhode Island", "Vermont",
-            "New York", "New Jersey", "Pennsylvania",
-            "Alabama", "Georgia", "Louisiana", "Mississippi", "South Carolina",
-            "Florida", "North Carolina", "Virginia",
-            "Illinois", "Indiana", "Michigan", "Ohio", "Wisconsin",
-            "Arizona", "New Mexico", "Texas", "Nevada", "Oklahoma",
-            "California", "Oregon", "Washington",
-            "Colorado", "Idaho", "Montana", "Utah", "Wyoming",
-            "Colorado", "Montana", "Wyoming",
-            "Kansas", "Nebraska", "North Dakota", "South Dakota",
-            "Alaska", "Hawaii", "Delaware", "Maryland", "Arkansas", "Oklahoma",
-            "Texas", "Louisiana", "Mississippi", "Alabama", "Florida"
+            "New England", "Mid-Atlantic", "Deep South", "Southeast Coast",
+            "Heartland", "Southwest", "Pacific Coast", "Mountain West",
+            "Rocky Mountains", "Great Plains", "Alaska", "Hawaii", "South Central", "Gulf Coast"
         ];
 
         $regionAleatoire = $regions[array_rand($regions)];
@@ -204,8 +196,8 @@ class UnitedStatesFakerGenerator extends BaseGenerator
         ];
 
         // Génération de coordonnées aléatoires dans les limites du Cameroun
-        $latitude = $limites['sud'] + mt_rand() / mt_getrandmax() * ($limites['nord'] - $limites['sud']);
-        $longitude = $limites['ouest'] + mt_rand() / mt_getrandmax() * ($limites['est'] - $limites['ouest']);
+        $latitude = $limites['south'] + mt_rand() / mt_getrandmax() * ($limites['north'] - $limites['south']);
+        $longitude = $limites['west'] + mt_rand() / mt_getrandmax() * ($limites['east'] - $limites['west']);
 
         return ['latitude' => $latitude, 'longitude' => $longitude];
     }

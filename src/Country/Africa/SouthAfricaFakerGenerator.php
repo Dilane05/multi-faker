@@ -4,8 +4,9 @@ namespace Cupidontech\MultiFaker\Country\Africa;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
+use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
-class SouthAfricaFakerGenerator extends BaseGenerator
+class SouthAfricaFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
     // Implémentez les méthodes de génération spécifiques au SouthAfrica ici
 

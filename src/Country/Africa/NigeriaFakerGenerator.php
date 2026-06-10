@@ -4,8 +4,9 @@ namespace Cupidontech\MultiFaker\Country\Africa;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
+use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
-class NigeriaFakerGenerator extends BaseGenerator
+class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
     public function first_name()
     {

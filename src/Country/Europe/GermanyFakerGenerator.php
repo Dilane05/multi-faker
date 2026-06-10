@@ -3,8 +3,9 @@
 namespace Cupidontech\MultiFaker\Country\Europe;
 
 use Faker\Generator as BaseGenerator;
+use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
-class GermanyFakerGenerator extends BaseGenerator
+class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
     // Implémentez les méthodes de génération spécifiques à la France ici
     public function first_name()
@@ -210,8 +211,8 @@ class GermanyFakerGenerator extends BaseGenerator
         ];
 
         // Génération de coordonnées aléatoires dans les limites du Cameroun
-        $latitude = $limites['sud'] + mt_rand() / mt_getrandmax() * ($limites['nord'] - $limites['sud']);
-        $longitude = $limites['ouest'] + mt_rand() / mt_getrandmax() * ($limites['est'] - $limites['ouest']);
+        $latitude = $limites['south'] + mt_rand() / mt_getrandmax() * ($limites['north'] - $limites['south']);
+        $longitude = $limites['west'] + mt_rand() / mt_getrandmax() * ($limites['east'] - $limites['west']);
 
         return ['latitude' => $latitude, 'longitude' => $longitude];
     }
