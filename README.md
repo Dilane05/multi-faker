@@ -104,6 +104,7 @@ As a result, developers often seed African applications with unrealistic names, 
 | Dates | ✅ |
 | Passwords & credit cards | ✅ |
 | Random text | ✅ |
+| Mobile money / payments | ✅ |
 
 ---
 
@@ -270,7 +271,26 @@ $faker->companyName();
 $faker->product();
 $faker->food();
 $faker->text(100);        // random text of given length
+
+// Mobile money & payments
+$faker->orangeMoneyNumber();        // mobile money phone number for the country
+$faker->orangeMoneyTransactionId(); // transaction reference (e.g. "OM237260610001234")
+$faker->orangeMoneyBalance();       // balance as int in local currency
 ```
+
+The mobile money methods are contextual — they use the dominant payment platform per country:
+
+| Country | Platform |
+|---------|----------|
+| 🇨🇲 Cameroon | Orange Money CM |
+| 🇨🇮 Ivory Coast | Orange Money CI |
+| 🇸🇳 Senegal | Orange Money SN |
+| 🇳🇬 Nigeria | MTN MoMo |
+| 🇿🇦 South Africa | MTN MoMo SA |
+| 🇨🇦 Canada | Interac e-Transfer |
+| 🇺🇸 United States | Venmo / CashApp |
+| 🇫🇷 France | Orange Bank |
+| 🇩🇪 Germany | PayPal / Klarna |
 
 ---
 
