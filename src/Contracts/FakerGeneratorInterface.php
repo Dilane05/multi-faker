@@ -22,4 +22,8 @@ interface FakerGeneratorInterface
     public function username();
     public function product();
     public function food();
+    public function university();
+    public function district();
+    public function licensePlate();
+    public function nationalId();
 }

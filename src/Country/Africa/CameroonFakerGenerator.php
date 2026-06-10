@@ -146,15 +146,15 @@ class CameroonFakerGenerator extends BaseGenerator implements FakerGeneratorInte
 
     public function phone()
     {
-        $prefix     = '+2376';
-        $firstDigit = [6, 5, 7, 9, 8][rand(0, 4)];
-        $rest       = '';
-
-        for ($i = 0; $i < 7; $i++) {
-            $rest .= rand(0, 9);
-        }
-
-        return $prefix . $firstDigit . $rest;
+        $prefixes = [
+            '650', '651', '652', '653', '654', '655', '656', '657', '658', '659',
+            '670', '671', '672', '673', '674', '675', '676', '677', '678', '679',
+            '690', '691', '692', '693', '694', '695', '696', '697', '698', '699',
+            '660', '661', '662', '663', '664', '665',
+            '620', '621', '622',
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+237 %s %03d %03d', $prefix, rand(0, 999), rand(0, 999));
     }
 
     public function email()
@@ -181,10 +181,17 @@ class CameroonFakerGenerator extends BaseGenerator implements FakerGeneratorInte
 
     public function companyName()
     {
-        $prefixes = ['Société', 'Entreprise', 'Groupe', 'Compagnie', 'OM', 'MOMO', 'ODC', 'EU MOBILE MONEY', 'BICEC', 'UBA', 'FINESS', 'GLOBAL', 'BUCA', 'ACTIVA', 'MEMPHYS', 'SABITOO', 'ANNA', 'G6K', 'K-RISMA', 'BOCOM', 'TOTAL', 'NEXTTEL', 'YOOME'];
-        $suffixes = ['Ltd', 'SA', 'SARL', 'EURL', 'SPRL'];
-
-        return $prefixes[array_rand($prefixes)] . ' ' . $suffixes[array_rand($suffixes)];
+        $companies = [
+            'MTN Cameroon', 'Orange Cameroun', 'Camtel', 'Nexttel Cameroun',
+            'Afriland First Bank', 'Société Générale Cameroun', 'UBA Cameroun',
+            'Ecobank Cameroun', 'BICEC', 'SCB Cameroun', 'BGFI Bank Cameroun',
+            'SABC', 'Guinness Cameroun', 'CICAM', 'Total Énergies Cameroun',
+            'Canal+ Cameroun', 'Campost', 'SCDP', 'Camair-Co', 'CFAO Motors',
+            'Tradex', 'Express Exchange', 'Chanas Assurances', 'Activa Assurances',
+            'CCA Bank', 'Crédit du Sahel', 'National Financial Credit (NFC)',
+            'Boulangerie Nouvelle', 'Pharmacie de la Paix', 'Imprimerie Saint-Paul',
+        ];
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -233,5 +240,50 @@ class CameroonFakerGenerator extends BaseGenerator implements FakerGeneratorInte
         ];
 
         return $plats[array_rand($plats)];
+    }
+
+    public function university()
+    {
+        $universities = [
+            'Université de Douala', 'Université de Yaoundé I', 'Université de Yaoundé II (Soa)',
+            'Université de Dschang', 'Université de Ngaoundéré', 'Université de Buea',
+            'Université de Maroua', 'Université de Bamenda',
+            'École Nationale Supérieure Polytechnique (ENSP)',
+            'École Nationale d\'Administration et de Magistrature (ENAM)',
+            'Institut Supérieur de Management de Yaoundé (ISM)',
+            'Université Catholique d\'Afrique Centrale (UCAC)',
+            'Institut des Relations Internationales du Cameroun (IRIC)',
+            'École Supérieure des Sciences et Techniques de l\'Information (ESSTIC)',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Akwa', 'Bonanjo', 'Bonapriso', 'Bonamoussadi', 'Bali', 'Deido',
+            'Logbessou', 'Makepe', 'Ndokotti', 'Bépanda', 'Ndog-Bong', 'Kotto',
+            'Logpom', 'Sodiko', 'Mboppi', 'Ndog-Passi', 'Nkol-Eton',
+            'Bastos', 'Tsinga', 'Mvan', 'Ekounou', 'Emana', 'Nkolbisson',
+            'Ngousso', 'Efoulan', 'Mvog-Ada', 'Mendong', 'Elig-Essono',
+            'Nlongkak', 'Santa Barbara', 'Omnisports', 'Essos', 'Mimboman',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $regions = ['LT', 'CE', 'NO', 'EN', 'AD', 'NW', 'SW', 'SU', 'ES', 'OU'];
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $region  = $regions[array_rand($regions)];
+        $number  = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        $suffix  = $letters[rand(0, strlen($letters) - 1)] . $letters[rand(0, strlen($letters) - 1)];
+        return $region . ' ' . $number . ' ' . $suffix;
+    }
+
+    public function nationalId()
+    {
+        $letter = chr(rand(65, 90));
+        return $letter . str_pad(rand(1, 99999999), 8, '0', STR_PAD_LEFT);
     }
 }

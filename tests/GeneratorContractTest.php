@@ -115,10 +115,10 @@ class GeneratorContractTest extends TestCase
     /**
      * @dataProvider generatorProvider
      */
-    public function test_orange_money_number_returns_non_empty_string(string $class): void
+    public function test_university_returns_non_empty_string(string $class): void
     {
         $generator = new $class();
-        $result = $generator->orangeMoneyNumber();
+        $result = $generator->university();
         $this->assertIsString($result);
         $this->assertNotEmpty($result);
     }
@@ -126,10 +126,10 @@ class GeneratorContractTest extends TestCase
     /**
      * @dataProvider generatorProvider
      */
-    public function test_orange_money_transaction_id_returns_non_empty_string(string $class): void
+    public function test_district_returns_non_empty_string(string $class): void
     {
         $generator = new $class();
-        $result = $generator->orangeMoneyTransactionId();
+        $result = $generator->district();
         $this->assertIsString($result);
         $this->assertNotEmpty($result);
     }
@@ -137,11 +137,33 @@ class GeneratorContractTest extends TestCase
     /**
      * @dataProvider generatorProvider
      */
-    public function test_orange_money_balance_returns_positive_number(string $class): void
+    public function test_license_plate_returns_non_empty_string(string $class): void
     {
         $generator = new $class();
-        $result = $generator->orangeMoneyBalance();
-        $this->assertIsInt($result);
-        $this->assertGreaterThan(0, $result);
+        $result = $generator->licensePlate();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_national_id_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->nationalId();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_company_name_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->companyName();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
     }
 }
