@@ -256,15 +256,20 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
 
     public function phone()
     {
-        $prefix = '+1'; // Préfixe international pour le Canada
-
-        // Générez les 10 chiffres suivants aléatoirement
-        $phoneDigits = '';
-        for ($i = 0; $i < 10; $i++) {
-            $phoneDigits .= rand(0, 9);
-        }
-
-        return $prefix . $phoneDigits;
+        $areaCodes = [
+            '604', '778', '250', '236',  // British Columbia
+            '403', '780', '587',         // Alberta
+            '306', '639',                // Saskatchewan
+            '204', '431',                // Manitoba
+            '416', '647', '437', '905', '289', '365',  // Ontario (Toronto)
+            '613', '343',                // Ontario (Ottawa)
+            '514', '438', '450', '579',  // Québec (Montréal)
+            '418', '581', '367',         // Québec (Québec)
+            '902', '782',                // Nova Scotia / PEI
+            '506',                       // New Brunswick
+        ];
+        $area = $areaCodes[array_rand($areaCodes)];
+        return sprintf('+1 (%s) %03d-%04d', $area, rand(200, 999), rand(1000, 9999));
     }
 
     public function email()
@@ -481,5 +486,52 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
         $nomPlat = $platsCanadiens[array_rand($platsCanadiens)];
 
         return $nomPlat;
+    }
+
+    public function university()
+    {
+        $universities = [
+            'University of Toronto', 'McGill University',
+            'University of British Columbia (UBC)', 'University of Alberta',
+            'Université de Montréal', 'University of Ottawa', 'Queen\'s University',
+            'Western University', 'McMaster University', 'Simon Fraser University',
+            'Dalhousie University', 'Université Laval', 'York University',
+            'University of Calgary', 'University of Manitoba',
+            'Carleton University', 'Concordia University', 'University of Waterloo',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Downtown Toronto', 'North York', 'Scarborough', 'Etobicoke', 'Mississauga',
+            'Brampton', 'Markham', 'Richmond Hill', 'Oakville', 'Burlington',
+            'Plateau-Mont-Royal', 'Côte-des-Neiges', 'Rosemont', 'Outremont', 'Westmount',
+            'NDG', 'Laval', 'Longueuil', 'Brossard', 'Saint-Laurent',
+            'Downtown Vancouver', 'Burnaby', 'Surrey', 'Richmond BC', 'Coquitlam',
+            'West End Vancouver', 'Kitsilano', 'Commercial Drive',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $formats = [
+            'ON' => fn() => strtoupper(substr(str_shuffle('ABCDEFGHJKLMNPRSTUVWXYZ'), 0, 4)) . ' ' . rand(100, 999),
+            'QC' => fn() => strtoupper(substr(str_shuffle('ABCDEFGHJKLMNPRSTUVWXYZ'), 0, 3)) . ' ' . rand(1000, 9999),
+            'BC' => fn() => strtoupper(substr(str_shuffle('ABCDEFGHJKLMNPRSTUVWXYZ'), 0, 3)) . ' ' . rand(100, 999),
+            'AB' => fn() => strtoupper(substr(str_shuffle('ABCDEFGHJKLMNPRSTUVWXYZ'), 0, 3)) . ' ' . rand(1000, 9999),
+        ];
+        $province = array_rand($formats);
+        return $province . ' ' . ($formats[$province])();
+    }
+
+    public function nationalId()
+    {
+        $part1 = str_pad(rand(100, 999), 3, '0', STR_PAD_LEFT);
+        $part2 = str_pad(rand(100, 999), 3, '0', STR_PAD_LEFT);
+        $part3 = str_pad(rand(100, 999), 3, '0', STR_PAD_LEFT);
+        return $part1 . '-' . $part2 . '-' . $part3;
     }
 }

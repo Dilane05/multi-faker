@@ -245,18 +245,13 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function phone()
     {
-        $prefix = '+221'; // Préfixe téléphonique du Sénégal
-    
-        // Générez le premier chiffre aléatoire parmi 70, 76, 77, 78 ou 79 (indicatifs de réseau mobile au Sénégal)
-        $firstDigit = '7' . [0, 6, 7, 8, 9][rand(0, 4)];
-    
-        // Générez les 6 derniers chiffres aléatoires
-        $secondPart = '';
-        for ($i = 0; $i < 6; $i++) {
-            $secondPart .= rand(0, 9);
-        }
-    
-        return $prefix . $firstDigit  . $secondPart;
+        $prefixes = [
+            '77', '78',  // Orange Sénégal
+            '76',        // Free Sénégal
+            '70',        // Expresso
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+221 %s %03d %02d %02d', $prefix, rand(100, 999), rand(10, 99), rand(10, 99));
     }
     
     public function email()
@@ -290,27 +285,15 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function companyName()
     {
-        $prefixes = [
-            'Ivoirienne', 'Abidjan', 'Cocody', 'Marcory', 'Plateau', 'Treichville', 'Yopougon', 'Adjamé', 'Koumassi', 'Port-Bouët',
-            'Treichville', 'Attécoubé', 'Korhogo', 'Bouaké', 'Daloa', 'Yamoussoukro', 'San Pedro', 'Man', 'Divo', 'Gagnoa',
-            'Abengourou', 'Bouaflé', 'Sassandra', 'Grand-Bassam', 'Bondoukou', 'Odienné', 'Seguela', 'Agboville', 'Bouna', 'Issia',
-            'Ferkessédougou', 'Dabou', 'Bangolo', 'Tingrela', 'Sinfra', 'Danané', 'Katiola', 'Toumodi', 'Daoukro', 'Sakassou',
-            'Tanda', 'Bonoua', 'Bingerville', 'Béoumi', 'Alepe', 'Adiaké', 'Lakota', 'Tiassalé', 'Djékanou', 'Facobly'
+        $companies = [
+            'Orange Sénégal', 'Free Sénégal', 'Sonatel', 'Expresso Sénégal',
+            'Senelec', 'SGBS', 'Ecobank Sénégal', 'CBAO', 'Banque Atlantique SN',
+            'UBA Sénégal', 'Orabank Sénégal', 'BIS', 'BNDE', 'Crédit du Sénégal',
+            'Total Sénégal', 'Air Sénégal', 'Canal+ Sénégal', 'Wave Sénégal',
+            'SAED', 'SONACOS', 'SUNEOR', 'Patisen', 'NMA Sanders',
+            'DHL Sénégal', 'Bolloré Transport & Logistics SN', 'COSEC',
         ];
-
-
-        $suffixes = [
-            'Ltd', 'PLC', 'LLC', 'LLP', 'Limited', 'PLC', 'LLC', 'LLP', 'Holdings', 'Group', 'Corp', 'Corporation', 'Services',
-            'Enterprises', 'Solutions', 'Global', 'Ventures', 'Industries', 'Integrators', 'Associates', 'Incorporated', 'Partners',
-            'Resources', 'Technologies', 'Logistics', 'Management', 'Consulting', 'Enterprises', 'Solutions', 'Group', 'Industries',
-            'Systems', 'Enterprises', 'Holdings', 'Development', 'Sustainable', 'Enterprises', 'Innovations', 'Foundation'
-
-        ];
-
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-
-        return "$prefix $suffix";
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -447,8 +430,50 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     
         // Sélection aléatoire d'un nom de plat sénégalais
         $nomPlat = $platsSenegalais[array_rand($platsSenegalais)];
-    
+
         return $nomPlat;
     }
-    
+
+    public function university()
+    {
+        $universities = [
+            'Université Cheikh Anta Diop (UCAD) de Dakar',
+            'Université Gaston Berger (UGB) de Saint-Louis',
+            'Université de Ziguinchor', 'Université Alioune Diop de Bambey',
+            'Université Assane Seck de Ziguinchor',
+            'École Supérieure Polytechnique (ESP)',
+            'Institut Supérieur de Management (ISM)',
+            'Université du Sahel', 'École Nationale Supérieure d\'Agriculture (ENSA)',
+            'Institut Africain de Management (IAM)',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Plateau', 'Médina', 'Grand Dakar', 'Parcelles Assainies',
+            'Ouakam', 'Ngor', 'Almadies', 'Yoff', 'Sacré-Cœur',
+            'Point E', 'Fann', 'Liberté', 'HLM', 'Grand Yoff',
+            'Pikine', 'Guédiawaye', 'Dieuppeul', 'Derklé',
+            'Mermoz', 'Sicap', 'Fenêtre Mermoz', 'Hlm Grand Yoff',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $regions = ['DK', 'TH', 'KL', 'ZG', 'SL', 'LG', 'FK', 'KD', 'MT', 'TC'];
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $region = $regions[array_rand($regions)];
+        $number = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        $suffix = $letters[rand(0, strlen($letters) - 1)];
+        return $region . ' ' . $number . ' ' . $suffix;
+    }
+
+    public function nationalId()
+    {
+        $year = rand(70, 99);
+        return '1' . $year . str_pad(rand(1, 9999999999999), 11, '0', STR_PAD_LEFT);
+    }
 }

@@ -150,14 +150,15 @@ class FranceFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
 
     public function phone()
     {
-        $first = [6, 7, 9][rand(0, 2)];
-        $rest  = '';
-
-        for ($i = 0; $i < 8; $i++) {
-            $rest .= rand(0, 9);
-        }
-
-        return '+33' . $first . $rest;
+        $prefixes = [
+            '06 1', '06 2', '06 8',   // Orange
+            '06 3', '06 7',            // SFR
+            '06 6', '06 9',            // Bouygues
+            '06 5', '07 5',            // Free Mobile
+            '07 6', '07 8',            // autres
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+33 %s %02d %02d %02d %02d', $prefix, rand(10, 99), rand(10, 99), rand(10, 99), rand(10, 99));
     }
 
     public function email()
@@ -184,19 +185,16 @@ class FranceFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
 
     public function companyName()
     {
-        $prefixes = [
-            'Air France', 'Total', 'L\'Oréal', 'BNP Paribas', 'Renault', 'AXA', 'Dassault Systèmes', 'Capgemini',
-            'Sanofi', 'LVMH', 'Société Générale', 'Orange', 'Danone', 'Schneider Electric', 'Thales', 'Saint-Gobain',
-            'Carrefour', 'Publicis', 'Michelin', 'Airbus', 'Veolia', 'Sodexo', 'Alstom', 'Engie', 'Hermès',
-            'Safran', 'EssilorLuxottica', 'Vinci', 'Peugeot', 'Eiffage', 'Bouygues', 'Kering', 'Accor', 'EDF',
-            'Air Liquide', 'Suez', 'Arkema', 'Ubisoft', 'Valeo', 'Legrand',
+        $companies = [
+            'LVMH', 'TotalEnergies', 'BNP Paribas', 'AXA', 'Société Générale',
+            'Crédit Agricole', 'Carrefour', 'EDF', 'Engie', 'Sanofi',
+            'L\'Oréal', 'Michelin', 'Airbus', 'Renault', 'Stellantis',
+            'Dassault Aviation', 'Thales', 'Safran', 'Schneider Electric',
+            'Capgemini', 'Orange SA', 'Vivendi', 'Canal+', 'CMA CGM',
+            'Air France-KLM', 'Danone', 'Kering', 'Hermès', 'Publicis Groupe',
+            'Vinci', 'Bouygues', 'Eiffage', 'Veolia', 'Air Liquide',
         ];
-
-        $suffixes = [
-            'SA', 'SAS', 'SARL', 'Group', 'Corp', 'Holdings', 'Solutions', 'Services', 'Ventures', 'Industries',
-        ];
-
-        return $prefixes[array_rand($prefixes)] . ' ' . $suffixes[array_rand($suffixes)];
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -249,5 +247,53 @@ class FranceFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
         ];
 
         return $plats[array_rand($plats)];
+    }
+
+    public function university()
+    {
+        $universities = [
+            'Université Paris-Sorbonne (Paris IV)', 'Université Paris Cité',
+            'Sciences Po Paris', 'HEC Paris', 'École Polytechnique',
+            'ENS Paris', 'ESSEC Business School', 'INSEAD', 'Centrale Paris',
+            'Mines Paris', 'Télécom Paris', 'ESCP Business School',
+            'Université de Lyon I', 'Université de Bordeaux',
+            'Université Paul Sabatier (Toulouse III)', 'Université Aix-Marseille',
+            'Université de Strasbourg', 'Université de Lille',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Le Marais', 'Saint-Germain-des-Prés', 'Montmartre', 'Bastille',
+            'Belleville', 'République', 'Oberkampf', 'Canal Saint-Martin',
+            'La Défense', 'Neuilly-sur-Seine', 'Boulogne-Billancourt',
+            'Levallois-Perret', 'Issy-les-Moulineaux', 'Vincennes',
+            'Montreuil', 'Pantin', 'Saint-Denis', 'Aubervilliers',
+            'Part-Dieu', 'Confluence', 'Vieux-Port', 'Préfecture',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        $l3 = $letters[rand(0, strlen($letters) - 1)];
+        $l4 = $letters[rand(0, strlen($letters) - 1)];
+        return $l1 . $l2 . '-' . rand(100, 999) . '-' . $l3 . $l4;
+    }
+
+    public function nationalId()
+    {
+        $sex  = rand(1, 2);
+        $year = str_pad(rand(50, 99), 2, '0', STR_PAD_LEFT);
+        $month = str_pad(rand(1, 12), 2, '0', STR_PAD_LEFT);
+        $dept = str_pad(rand(1, 95), 2, '0', STR_PAD_LEFT);
+        $order = str_pad(rand(1, 999), 3, '0', STR_PAD_LEFT);
+        $key  = str_pad(rand(1, 97), 2, '0', STR_PAD_LEFT);
+        return $sex . ' ' . $year . ' ' . $month . ' ' . $dept . ' ' . $order . ' ' . $key;
     }
 }
