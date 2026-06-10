@@ -340,15 +340,8 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function username()
     {
-
-        $firstName = $this->first_name;
-        $lastName = $this->last_name;
-
-        // Générez un nombre aléatoire à ajouter au nom d'utilisateur
         $randomNumber = rand(100, 999);
-
-        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
-        $username = strtolower($firstName . $lastName . $randomNumber);
+        $username = strtolower($this->first_name() . $this->last_name() . $randomNumber);
 
         return $username;
     }
