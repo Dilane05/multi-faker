@@ -114,7 +114,7 @@ class SouthAfricaFakerGenerator extends BaseGenerator implements FakerGeneratorI
     return $origins[$randomIndex];
 }
 
-function region()
+public function region()
 {
     $regions = [
         "Gauteng", "KwaZulu-Natal", "Western Cape", "Eastern Cape", "Mpumalanga", "Limpopo", "North West", "Free State", "Northern Cape"
@@ -124,7 +124,7 @@ function region()
     return $randomRegion;
 }
 
-function city($region)
+public function city($region)
 {
     $villesParRegion = [
         "Gauteng" => ["Johannesburg", "Pretoria", "Soweto"],
@@ -153,7 +153,7 @@ public function cities()
     return $villes[array_rand($villes)];
 }
 
-function coordinates()
+public function coordinates()
 {
     // Limites géographiques de l'Afrique du Sud (latitude et longitude)
     $limites = [
@@ -311,15 +311,8 @@ public function phone()
 
     public function username()
     {
-
-        $firstName = $this->first_name;
-        $lastName = $this->last_name;
-
-        // Générez un nombre aléatoire à ajouter au nom d'utilisateur
         $randomNumber = rand(100, 999);
-
-        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
-        $username = strtolower($firstName . $lastName . $randomNumber);
+        $username = strtolower($this->first_name() . $this->last_name() . $randomNumber);
 
         return $username;
     }

@@ -358,28 +358,12 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function username()
     {
-
-        $firstName = $this->first_name;
-        $lastName = $this->last_name;
-
-        // Générez un nombre aléatoire à ajouter au nom d'utilisateur
-        $randomNumber = rand(100, 999);
-
-        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
-        $username = strtolower($firstName . $lastName . $randomNumber);
-
-        return $username;
+        return strtolower($this->first_name() . $this->last_name() . rand(100, 999));
     }
+
     public function name()
     {
-
-        $firstName = $this->first_name;
-        $lastName = $this->last_name;
-
-        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
-        $name = strtolower($firstName . $lastName);
-
-        return $name;
+        return strtolower($this->first_name() . $this->last_name());
     }
 
     function product()
