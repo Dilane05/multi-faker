@@ -250,19 +250,24 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
 
     public function phone()
     {
-        $prefix = '+1';
-
-        // Generate the first digit randomly from 2 to 9
-        $firstDigit = rand(2, 9);
-
-
-        // Générez les 5 derniers chiffres aléatoires
-        $secondPart = '';
-        for ($i = 0; $i < 9; $i++) {
-            $secondPart .= rand(0, 9);
-        }
-
-        return $prefix . $firstDigit  . $secondPart;
+        $areaCodes = [
+            '212', '646', '718', '917', '332',  // New York City
+            '213', '310', '323', '424', '747',  // Los Angeles
+            '312', '773', '872',                // Chicago
+            '713', '281', '832', '346',         // Houston
+            '602', '480', '623',                // Phoenix
+            '215', '267', '445',                // Philadelphia
+            '210', '726',                       // San Antonio
+            '619', '858', '442',                // San Diego
+            '214', '469', '972', '945',         // Dallas
+            '408', '669',                       // San Jose
+            '512', '737',                       // Austin
+            '415', '628',                       // San Francisco
+            '614', '380',                       // Columbus
+            '704', '980',                       // Charlotte
+        ];
+        $area = $areaCodes[array_rand($areaCodes)];
+        return sprintf('+1 (%s) %03d-%04d', $area, rand(200, 999), rand(1000, 9999));
     }
 
     public function email()
@@ -296,13 +301,15 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
 
     public function companyName()
     {
-        $prefixes = ['ABC', 'XYZ', 'Tech', 'First', 'Global', 'National', 'United', 'Innovative', 'American', 'Century', 'City', 'Strategic', 'Dynamic', 'Capital', 'Quality', 'Pioneer', 'Advanced', 'Frontier', 'Pro', 'Star', 'Peak', 'Worldwide', 'Blue', 'Green', 'Red', 'Yellow'];
-        $suffixes = ['Inc', 'Corp', 'Group', 'Enterprises', 'Solutions', 'Industries', 'Incorporated', 'Services', 'International', 'Systems', 'Holdings', 'Enterprises', 'Associates', 'Ventures', 'Management', 'Partners', 'Technologies', 'Logistics', 'Consulting', 'Network', 'Innovations', 'America', 'Global', 'World', 'United', 'Enterprize'];
-
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-
-        return "$prefix $suffix";
+        $companies = [
+            'Apple', 'Microsoft', 'Google', 'Amazon', 'Meta', 'Tesla', 'Nvidia',
+            'Walmart', 'JPMorgan Chase', 'Bank of America', 'Wells Fargo', 'Citigroup',
+            'ExxonMobil', 'Chevron', 'Johnson & Johnson', 'Pfizer', 'UnitedHealth Group',
+            'Coca-Cola', 'PepsiCo', 'McDonald\'s', 'Starbucks', 'Nike', 'Disney',
+            'Netflix', 'AT&T', 'Verizon', 'Visa', 'Mastercard', 'Goldman Sachs',
+            'Morgan Stanley', 'Berkshire Hathaway', 'Home Depot', 'Procter & Gamble',
+        ];
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -416,8 +423,51 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
     
         // Sélection aléatoire d'un nom de plat
         $nomPlat = $platsUs[array_rand($platsUs)];
-    
+
         return $nomPlat;
     }
-    
+
+    public function university()
+    {
+        $universities = [
+            'Harvard University', 'MIT', 'Stanford University', 'Yale University',
+            'Princeton University', 'Columbia University', 'University of Chicago',
+            'Duke University', 'University of Pennsylvania', 'Dartmouth College',
+            'Brown University', 'Cornell University', 'UC Berkeley', 'UCLA',
+            'NYU', 'USC', 'University of Michigan', 'University of Texas at Austin',
+            'Georgetown University', 'Notre Dame University', 'Johns Hopkins University',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Manhattan', 'Brooklyn', 'Queens', 'The Bronx', 'Staten Island',
+            'Beverly Hills', 'Hollywood', 'Santa Monica', 'Venice Beach', 'Malibu',
+            'Lincoln Park', 'Logan Square', 'Wicker Park', 'River North', 'Gold Coast',
+            'Midtown', 'Upper East Side', 'Harlem', 'SoHo', 'Tribeca',
+            'Georgetown', 'Dupont Circle', 'Adams Morgan', 'Capitol Hill',
+            'Mission District', 'Nob Hill', 'Haight-Ashbury', 'Castro',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        $l3 = $letters[rand(0, strlen($letters) - 1)];
+        return $l1 . $l2 . $l3 . '-' . rand(1000, 9999);
+    }
+
+    public function nationalId()
+    {
+        $area   = str_pad(rand(1, 899), 3, '0', STR_PAD_LEFT);
+        if ($area === '666') $area = '667';
+        $group  = str_pad(rand(1, 99), 2, '0', STR_PAD_LEFT);
+        $serial = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        return $area . '-' . $group . '-' . $serial;
+    }
 }

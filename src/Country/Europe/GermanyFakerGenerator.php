@@ -276,18 +276,14 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function phone()
     {
-        $prefix = '+49'; // Germany country code
-
-        // Generate the first digit randomly from 1 to 9
-        $firstDigit = rand(1, 9);
-
-        // Generate the following 10 digits randomly
-        $secondPart = '';
-        for ($i = 0; $i < 10; $i++) {
-            $secondPart .= rand(0, 9);
-        }
-
-        return $prefix . $firstDigit  . $secondPart;
+        $prefixes = [
+            '0151', '0160', '0170', '0171', '0175',  // Telekom
+            '0152', '0162', '0172', '0173', '0174',  // Vodafone
+            '0176', '0177', '0178', '0179',          // O2
+            '0157', '0163',                          // 1&1 / Drillisch
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+49 %s %07d', $prefix, rand(1000000, 9999999));
     }
 
 
@@ -322,13 +318,15 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function companyName()
     {
-        $prefixes = ['Firma', 'Unternehmen', 'Gruppe', 'Gesellschaft', 'AG', 'GmbH', 'KG', 'OHG'];
-        $suffixes = ['& Co.', 'e.K.', 'mbH', 'AG', 'UG', 'KGaA', 'eG'];
-
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-
-        return "$prefix $suffix";
+        $companies = [
+            'Volkswagen AG', 'BMW AG', 'Mercedes-Benz Group', 'Siemens AG', 'SAP SE',
+            'Deutsche Telekom', 'Deutsche Bank', 'Allianz SE', 'Munich Re', 'BASF SE',
+            'Bayer AG', 'Henkel AG', 'adidas AG', 'Puma SE', 'Bosch GmbH',
+            'Continental AG', 'Thyssenkrupp', 'E.ON SE', 'RWE AG', 'Lufthansa AG',
+            'Deutsche Post DHL', 'Zalando SE', 'Lidl', 'Aldi', 'REWE Group',
+            'Otto GmbH', 'Infineon Technologies', 'LANXESS', 'Covestro AG',
+        ];
+        return $companies[array_rand($companies)];
     }
 
     public function creditCardNumber()
@@ -444,8 +442,60 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     
         // Sélection aléatoire d'un nom de plat
         $nomPlat = $platsGermany[array_rand($platsGermany)];
-    
+
         return $nomPlat;
     }
 
+    public function university()
+    {
+        $universities = [
+            'Ludwig-Maximilians-Universität München (LMU)',
+            'Technische Universität München (TUM)',
+            'Ruprecht-Karls-Universität Heidelberg',
+            'Humboldt-Universität zu Berlin',
+            'Freie Universität Berlin',
+            'RWTH Aachen University',
+            'Universität Hamburg',
+            'Goethe-Universität Frankfurt',
+            'Universität Stuttgart',
+            'Albert-Ludwigs-Universität Freiburg',
+            'Technische Universität Berlin (TU Berlin)',
+            'Karlsruher Institut für Technologie (KIT)',
+            'Universität Mannheim', 'Georg-August-Universität Göttingen',
+            'Westfälische Wilhelms-Universität Münster',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Mitte', 'Prenzlauer Berg', 'Friedrichshain', 'Kreuzberg',
+            'Charlottenburg', 'Wilmersdorf', 'Schöneberg', 'Neukölln',
+            'Wedding', 'Pankow', 'Steglitz', 'Zehlendorf',
+            'Schwabing', 'Maxvorstadt', 'Bogenhausen', 'Haidhausen',
+            'Altstadt', 'Lehel', 'Giesing', 'Pasing',
+            'Altstadt Hamburg', 'Eimsbüttel', 'Eppendorf', 'Barmbek',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $cities = ['B', 'M', 'HH', 'K', 'F', 'S', 'DU', 'DO', 'L', 'DD', 'HB', 'NÜ', 'MA', 'BO', 'WI'];
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $city = $cities[array_rand($cities)];
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        $number = rand(1, 9999);
+        return $city . ' ' . $l1 . $l2 . ' ' . $number;
+    }
+
+    public function nationalId()
+    {
+        $letter = chr(rand(65, 90));
+        $digits = str_pad(rand(10000000, 99999999), 8, '0', STR_PAD_LEFT);
+        $check  = rand(0, 9);
+        return $letter . $digits . $check;
+    }
 }

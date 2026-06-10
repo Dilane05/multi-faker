@@ -111,4 +111,59 @@ class GeneratorContractTest extends TestCase
         $this->assertIsString($result);
         $this->assertNotEmpty($result);
     }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_university_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->university();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_district_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->district();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_license_plate_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->licensePlate();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_national_id_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->nationalId();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_company_name_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->companyName();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
 }

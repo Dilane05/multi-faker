@@ -214,21 +214,17 @@ public function address()
     return "$randomNeighborhood, $randomCity";
 }    
 
-public function phone()
-{
-    $prefixes = ['+27(0)60', '+27(0)61', '+27(0)62', '+27(0)63', '+27(0)64', '+27(0)65', '+27(0)66', '+27(0)67', '+27(0)68', '+27(0)69'];
-    
-    // Choisissez un préfixe téléphonique aléatoire parmi les indicatifs de réseau mobile en Afrique du Sud
-    $randomPrefix = $prefixes[array_rand($prefixes)];
-    
-    // Générez les 7 derniers chiffres aléatoires
-    $secondPart = '';
-    for ($i = 0; $i < 7; $i++) {
-        $secondPart .= rand(0, 9);
+    public function phone()
+    {
+        $prefixes = [
+            '082', '072', '060',  // Vodacom
+            '083', '073', '063',  // MTN SA
+            '084', '074', '064',  // Cell C
+            '081', '071',         // Telkom Mobile
+        ];
+        $prefix = $prefixes[array_rand($prefixes)];
+        return sprintf('+27 %s %03d %04d', $prefix, rand(100, 999), rand(1000, 9999));
     }
-    
-    return $randomPrefix . $secondPart;
-}
 
     
     public function email()
@@ -262,26 +258,16 @@ public function phone()
 
     public function companyName()
     {
-        $prefixes = [
-            'Safika', 'Barloworld', 'Naspers', 'Bidvest', 'Remgro', 'Sasol', 'Anglo American', 'Sanlam', 'Standard Bank', 'Old Mutual',
-            'MTN Group', 'Shoprite Holdings', 'Vodacom Group', 'Tiger Brands', 'Aspen Pharmacare', 'Investec', 'Imperial Logistics', 'Mediclinic International', 'BHP', 'Gold Fields',
-            'Sibanye-Stillwater', 'AngloGold Ashanti', 'Exxaro Resources', 'Sappi', 'Mr Price Group', 'Woolworths Holdings', 'Netcare', 'Telkom Group', 'Life Healthcare', 'Pick n Pay Stores',
-            'Clicks Group', 'Truworths International', 'Adcock Ingram Holdings', 'RMB Holdings', 'Reinet Investments', 'Massmart Holdings', 'Redefine Properties', 'Remgro', 'Bidcorp', 'Growthpoint Properties',
-            'Capitec Bank Holdings', 'Kumba Iron Ore', 'Barclays Africa Group', 'RMB Holdings', 'Reinet Investments', 'Massmart Holdings', 'Redefine Properties', 'Bidcorp', 'Growthpoint Properties', 'Capitec Bank Holdings',
-            'Kumba Iron Ore', 'Barclays Africa Group', 'Telkom Group', 'Nampak', 'Impala Platinum Holdings', 'Sanlam', 'Steinhoff International Holdings', 'Exxaro Resources', 'Netcare', 'Hosken Consolidated Investments',
-            'Coronation Fund Managers', 'Murray & Roberts Holdings', 'AVI', 'Liberty Holdings', 'Reunert', 'Pioneer Foods Group', 'Exxaro Resources', 'RMB Holdings', 'Mondi', 'Shoprite Holdings', 'Anglo American Platinum',
-            'Datatec', 'Vukile Property Fund', 'Redefine Properties', 'Woolworths Holdings', 'Sasol', 'BHP', 'Barloworld', 'Sanlam', 'Bidvest', 'Remgro', 'Sappi', 'Anglo American Platinum', 'Tiger Brands', 'Nedbank Group'
+        $companies = [
+            'MTN South Africa', 'Vodacom', 'Cell C', 'Telkom SA',
+            'Standard Bank', 'FNB', 'ABSA', 'Nedbank', 'Capitec Bank',
+            'Discovery', 'Old Mutual', 'Sanlam', 'Momentum Metropolitan',
+            'Pick n Pay', 'Shoprite', 'Woolworths SA', 'Checkers', 'Clicks',
+            'Anglo American', 'De Beers', 'Sasol', 'Eskom', 'Transnet',
+            'Bidvest', 'Remgro', 'Naspers', 'MultiChoice', 'Tiger Brands',
+            'Aspen Pharmacare', 'AngloGold Ashanti', 'Sibanye-Stillwater',
         ];
-    
-        $suffixes = [
-            'Ltd', 'PLC', 'LLC', 'Limited', 'Holdings', 'Group', 'Corp', 'Corporation', 'Services', 'Enterprises', 'Solutions', 'Global', 'Ventures', 'Industries', 'Integrators', 'Associates', 'Incorporated',
-            'Partners', 'Resources', 'Technologies', 'Logistics', 'Management', 'Consulting', 'Enterprises', 'Solutions', 'Group', 'Industries', 'Systems', 'Enterprises', 'Holdings', 'Development', 'Foundation'
-        ];
-    
-        $prefix = $prefixes[rand(0, count($prefixes) - 1)];
-        $suffix = $suffixes[rand(0, count($suffixes) - 1)];
-    
-        return "$prefix $suffix";
+        return $companies[array_rand($companies)];
     }
     
     public function creditCardNumber()
@@ -423,6 +409,50 @@ public function phone()
     
         return $nomPlat;
     }
-    
-    
+
+    public function university()
+    {
+        $universities = [
+            'University of Cape Town (UCT)', 'University of the Witwatersrand (Wits)',
+            'Stellenbosch University', 'University of Pretoria (UP)',
+            'University of KwaZulu-Natal (UKZN)', 'Rhodes University',
+            'University of Johannesburg (UJ)', 'University of the Western Cape (UWC)',
+            'UNISA', 'North-West University (NWU)', 'University of Limpopo',
+            'University of the Free State', 'Nelson Mandela University',
+            'Cape Peninsula University of Technology (CPUT)',
+        ];
+        return $universities[array_rand($universities)];
+    }
+
+    public function district()
+    {
+        $districts = [
+            'Sandton', 'Soweto', 'Rosebank', 'Melville', 'Fourways',
+            'Midrand', 'Centurion', 'Hatfield', 'Sunnyside', 'Arcadia',
+            'Sea Point', 'Green Point', 'Camps Bay', 'Observatory', 'Woodstock',
+            'Claremont', 'Kenilworth', 'Umhlanga', 'Berea', 'Morningside',
+            'Hillcrest', 'Ballito', 'Durban North', 'Pinetown', 'Westville',
+        ];
+        return $districts[array_rand($districts)];
+    }
+
+    public function licensePlate()
+    {
+        $provinces = ['GP', 'WC', 'KZN', 'EC', 'LP', 'MP', 'NC', 'NW', 'FS'];
+        $letters = 'ABCDEFGHJKLMNPRSTUVWXYZ';
+        $province = $provinces[array_rand($provinces)];
+        $l1 = $letters[rand(0, strlen($letters) - 1)];
+        $l2 = $letters[rand(0, strlen($letters) - 1)];
+        $number = rand(100, 999);
+        return $province . ' ' . $l1 . $l2 . ' ' . $number;
+    }
+
+    public function nationalId()
+    {
+        $year  = str_pad(rand(50, 99), 2, '0', STR_PAD_LEFT);
+        $month = str_pad(rand(1, 12), 2, '0', STR_PAD_LEFT);
+        $day   = str_pad(rand(1, 28), 2, '0', STR_PAD_LEFT);
+        $seq   = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
+        return $year . $month . $day . $seq . '08' . rand(0, 9);
+    }
 }
