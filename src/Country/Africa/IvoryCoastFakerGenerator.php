@@ -4,8 +4,9 @@ namespace Cupidontech\MultiFaker\Country\Africa;
 
 use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
+use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
-class IvoryCoastFakerGenerator extends BaseGenerator
+class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
     // Implémentez les méthodes de génération spécifiques à la Cote D'IVOIRE ici
 

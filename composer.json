@@ -12,11 +12,21 @@
         }
     ],
     "require": {
-        "php": "^5.3.3 || ^7.0 || ^8.0"
+        "php": "^7.4 || ^8.0",
+        "fakerphp/faker": "^1.23",
+        "illuminate/support": "^9.0 || ^10.0 || ^11.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
             "Cupidontech\\MultiFaker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cupidontech\\MultiFaker\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable", 
