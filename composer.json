@@ -29,8 +29,13 @@
             "Cupidontech\\MultiFaker\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable", 
+    "minimum-stability": "stable",
     "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "8.1"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
