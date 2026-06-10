@@ -111,4 +111,37 @@ class GeneratorContractTest extends TestCase
         $this->assertIsString($result);
         $this->assertNotEmpty($result);
     }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_orange_money_number_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->orangeMoneyNumber();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_orange_money_transaction_id_returns_non_empty_string(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->orangeMoneyTransactionId();
+        $this->assertIsString($result);
+        $this->assertNotEmpty($result);
+    }
+
+    /**
+     * @dataProvider generatorProvider
+     */
+    public function test_orange_money_balance_returns_positive_number(string $class): void
+    {
+        $generator = new $class();
+        $result = $generator->orangeMoneyBalance();
+        $this->assertIsInt($result);
+        $this->assertGreaterThan(0, $result);
+    }
 }
