@@ -1,133 +1,165 @@
 # multi-faker
-Package for generating Faker by country
 
-**Version :** 1.0.0 (in version 1.0.0 , currently being tested and developed)
+Country-specific fake data generator for PHP — with built-in support for French-speaking African countries and more.
+
+[![Tests](https://github.com/Dilane05/multi-faker/actions/workflows/tests.yml/badge.svg)](https://github.com/Dilane05/multi-faker/actions/workflows/tests.yml)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cupidontech/multi-faker)](https://packagist.org/packages/cupidontech/multi-faker)
+[![Total Downloads](https://img.shields.io/packagist/dt/cupidontech/multi-faker)](https://packagist.org/packages/cupidontech/multi-faker)
+[![PHP Version](https://img.shields.io/packagist/php-v/cupidontech/multi-faker)](https://packagist.org/packages/cupidontech/multi-faker)
 [![GitHub License](https://img.shields.io/github/license/Dilane05/multi-faker)](LICENSE.md)
-[![GitHub Release](https://img.shields.io/github/release/Dilane05/multi-faker)](https://github.com/Dilane05/multi-faker/releases)
+
 ## Table of Contents
 
+- [Why multi-faker?](#why-multi-faker)
+- [Supported countries](#supported-countries)
+- [Requirements](#requirements)
 - [Installation](#installation)
-- [Basic Usage](#basic-usage)
-- [Contributions](#Contributions)
-- [Formatters](#Formatters)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Available methods](#available-methods)
+- [Contributions](#contributions)
+- [License](#license)
 
+## Why multi-faker?
+
+[FakerPHP](https://fakerphp.org/) covers dozens of locales but has **no locale** for French-speaking African countries (Cameroon, Ivory Coast, Senegal, …). multi-faker fills that gap with realistic, country-specific names, phone numbers, cities, regions, and more.
+
+## Supported countries
+
+| Country | Key |
+|---------|-----|
+| Cameroon | `Cameroon` |
+| Ivory Coast | `IvoryCoast` |
+| Nigeria | `Nigeria` |
+| Senegal | `Senegal` |
+| South Africa | `SouthAfrica` |
+| Canada | `Canada` |
+| United States | `UnitedStates` |
+| France | `France` |
+| Germany | `Germany` |
+
+## Requirements
+
+- PHP 8.1+
+- Laravel 9, 10, or 11 (optional — works standalone too)
 
 ## Installation
 
-Install the Package by the following command,
+```bash
+composer require cupidontech/multi-faker
+```
 
-    composer require cupidontech/multi-faker
+Laravel auto-discovers the service provider. For older versions of Laravel, add it manually in `config/app.php`:
 
-If you encounter an error during package installation, just type this command:
-
-    composer require cupidontech/multi-faker --ignore-platform-reqs
-
-## Add Provider
-
-Add the provider to your `config/app` into `provider` section if using lower version of laravel,
-
+```php
+'providers' => [
     Cupidontech\MultiFaker\MultiFakerServiceProvider::class,
+],
+```
 
-## Add the country configuration to your .env file
+## Configuration
 
-    MULTI_FAKER_DEFAULT_COUNTRY= {Country}
+Set the default country in your `.env` file:
 
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Nigeria
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=France
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Canada
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=UnitedStates
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Germany
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=IvoryCoast
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=Senegal
-    e.g = MULTI_FAKER_DEFAULT_COUNTRY=SouthAfrica
+```env
+MULTI_FAKER_DEFAULT_COUNTRY=Cameroon
+```
 
-## Basic Usage
+Accepted values: `Cameroon`, `IvoryCoast`, `Nigeria`, `Senegal`, `SouthAfrica`, `Canada`, `UnitedStates`, `France`, `Germany`.
 
-To use this package, follow these steps:
+## Usage
 
-    use Cupidontech\MultiFaker\MultiFakerGenerator;
+### Standalone
 
-    $faker = new MultiFakerGenerator();
+```php
+use Cupidontech\MultiFaker\MultiFakerGenerator;
 
-    $name = $faker->firstName();
-    $address = $faker->address();
-    $email = $faker->email();
+$faker = new MultiFakerGenerator('Cameroon');
 
-use in a controller
+echo $faker->first_name();   // e.g. "Amina"
+echo $faker->phone();        // e.g. "+237 655 123 456"
+echo $faker->email();        // e.g. "amina.nkou@gmail.com"
+```
 
-    <? php
-    namespace App\Http\Controllers;
+### Laravel (dependency injection)
 
-    use Cupidontech\MultiFaker\MultiFakerGenerator;
+```php
+namespace App\Http\Controllers;
 
-    class Test extends Controller
+use Cupidontech\MultiFaker\MultiFakerGenerator;
+
+class SeedController extends Controller
+{
+    public function generate(MultiFakerGenerator $faker)
     {
-        public function generateData(MultiFakerGenerator $faker)
-        {
-            // Example of use
-            $name = $faker->last_name();
-            $address = $faker->address();
-            // ...
-        return view('data', compact('name', 'address'));
-        }
+        return [
+            'name'    => $faker->first_name() . ' ' . $faker->last_name(),
+            'email'   => $faker->email(),
+            'phone'   => $faker->phone(),
+            'address' => $faker->address(),
+        ];
     }
+}
+```
 
-    Make sure you add the necessary classes and import the package correctly into your Laravel application.  
+### Switching country at runtime
 
+```php
+$faker = new MultiFakerGenerator('Nigeria');
+echo $faker->first_name(); // Nigerian first name
 
-## Formatters
-# Local names
-    $firstName = $faker->first_name();
-    $lastName = $faker->last_name();
-# username
-    $username = $faker->username();
-# Gender
-    $gender = $faker->gender();
-# Local addresses
-    $address = $faker->address();
-# Local phone numbers
-    $phoneNumber = $faker->phone();
-# email
-    $email = $faker->email();
-# date
-    $date = $faker->date();
-# Generation of city and region names
-    $region = $faker->region();
-    $city = $faker->cities();
-    $city = $faker->city($region);
-# Location
-    $region = $faker->region(); 
-# coordinates
-    $coordinates = $faker->coordinates();
-# password
-    $password = $faker->password();
-# text
-    $text = $faker->text(30);
-# companyName
-    $companyName = $faker->companyName();
-# creditCardNumber
-    $creditCardNumber = $faker->creditCardNumber();
-# product
-    $product = $faker->product();
-# food
-    $food = $faker->food();
+$faker = new MultiFakerGenerator('France');
+echo $faker->first_name(); // French first name
+```
 
+## Available methods
 
-## Countries supported
+All generators implement the same interface, regardless of country.
 
-Cameroon ,  Nigeria , France , Canada , United State , Germany , IvoryCoast , Senegal , SouthAfrica <br> <br>
-(coming soon) ... Ivory Coast ,United States , Brazil , United Kingdom , Germany , Spain , South Africa , Ghana , Ethiopia , Kenya , Morocco , Algeria , India , China , Australia 
+```php
+// Identity
+$faker->first_name();
+$faker->last_name();
+$faker->name();          // full name (lowercased)
+$faker->username();      // e.g. "aminankou742"
+$faker->gender();        // "Male" or "Female"
+
+// Contact
+$faker->email();
+$faker->phone();
+
+// Location
+$faker->address();
+$faker->region();
+$faker->city($region);   // city in the given region
+$faker->cities();        // random city from all regions
+$faker->coordinates();   // ['latitude' => ..., 'longitude' => ...]
+
+// Date & security
+$faker->date();                                        // default: last 30 years
+$faker->date('-10 years', 'now', 'd/m/Y');            // custom range & format
+$faker->password();
+$faker->creditCardNumber();
+
+// Business & content
+$faker->companyName();
+$faker->product();
+$faker->food();
+$faker->text(100);       // random text of given length
+```
+
 ## Contributions
 
-We welcome contributions from the community. If you would like to contribute to this project, please follow these steps:
+We welcome contributions. Please follow the git flow below:
 
-1. Fork the project.
-2. Create a branch for your feature (`git checkout -b new-feature`).
-3. Make your changes and commit them (`git commit -am 'Add new feature'`).
-4. Push the branch (`git push origin new-feature`).
-5. Create a pull request on GitHub.
+1. Fork the repository and clone it locally.
+2. Create a feature branch from `dev`: `git checkout -b feature/my-feature dev`
+3. Write your code and tests, then commit.
+4. Push your branch and open a pull request **targeting `dev`**.
+5. Once reviewed and merged to `dev`, a maintainer will cut a release to `main`.
+
+To add a new country, see the [CLAUDE.md](CLAUDE.md) guide.
 
 ## License
 
-This package is distributed under the [MIT] license. See [LICENSE.md](LICENSE.md) for details.
+Distributed under the [MIT](LICENSE.md) license.
