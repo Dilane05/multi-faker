@@ -91,7 +91,7 @@ class CameroonFakerGenerator extends BaseGenerator implements FakerGeneratorInte
             'Extrême-Nord'=> ['Maroua', 'Mokolo', 'Kousséri'],
             'Littoral'    => ['Douala', 'Nkongsamba', 'Edea'],
             'Nord'        => ['Garoua', 'Poli', 'Rey Bouba'],
-            'Nord-Ouest'  => ['Bamenda', 'Buea', 'Kumbo'],
+            'Nord-Ouest'  => ['Bamenda', 'Wum', 'Kumbo'],
             'Ouest'       => ['Dschang', 'Bafoussam', 'Mbouda'],
             'Sud'         => ['Ebolowa', 'Sangmélima', 'Meyomessala'],
             'Sud-Ouest'   => ['Buea', 'Limbe', 'Kumba'],
@@ -159,7 +159,7 @@ class CameroonFakerGenerator extends BaseGenerator implements FakerGeneratorInte
 
     public function email()
     {
-        return $this->last_name() . rand(1, 100) . '@237.cm';
+        return strtolower($this->last_name() . rand(1, 100) . '@example.cm');
     }
 
     public function date($startDate = '-30 years', $endDate = 'now', $format = 'Y-m-d')

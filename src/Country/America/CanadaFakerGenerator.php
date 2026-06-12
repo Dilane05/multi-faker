@@ -137,7 +137,8 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
             'Desrochers', 'Blais', 'Ouellet', 'Larocque', 'Trépanier', 'Gingras', 'Lavoie',
             'Gagnon', 'Houle', 'Tanguay', 'Bourgeois', 'Gagné', 'Turcotte', 'Rancourt',
             'Laroche', 'Cyr', 'Hébert', 'Lefebvre', 'Pépin', 'Bourdon', 'Rondeau',
-            'Gagnon', 'Roy', 'Poirier', 'Vachon', 'Lem',
+            'Gagnon', 'Roy', 'Poirier', 'Vachon',
+            'Lemieux',
         ];
 
         $randomIndex = rand(0, count($lastNames) - 1);
@@ -199,12 +200,12 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
     public function cities()
     {
         $villes = [
-            "Calgary", "Edmonton", "Vancouver", "Victoria", "Surrey", "Burnaby", "Winnipeg", "Toronto", "Ottawa", "Montreal",
-            "Quebec City", "Halifax", "Moncton", "Fredericton", "Saskatoon", "Regina", "St. John's", "Yellowknife", "Iqaluit", "Whitehorse",
-            "Red Deer", "Lethbridge", "Medicine Hat", "Grande Prairie", "Kelowna", "Kamloops", "Saint John", "Mississauga", "Brampton", "Hamilton",
-            "London", "Gatineau", "Sherbrooke", "Prince Albert", "Moose Jaw", "Swift Current", "Corner Brook", "Truro", "Sydney", "Charlottetown",
-            "Summerside", "Mount Pearl", "Conception Bay South", "Grand Falls-Windsor", "Corner Brook", "Yellowknife", "Iqaluit", "Rankin Inlet", "Whitehorse", "Carmacks",
-            "Dawson City", "Watson Lake", "Haines Junction", "Fort Smith", "Behchoko", "Fort Simpson", "Arviat", "Baker Lake", "Cambridge Bay", "Igloolik",
+            'Calgary', 'Edmonton', 'Vancouver', 'Victoria', 'Surrey', 'Burnaby', 'Winnipeg', 'Toronto', 'Ottawa', 'Montreal',
+            'Quebec City', 'Halifax', 'Moncton', 'Fredericton', 'Saskatoon', 'Regina', "St. John's", 'Yellowknife', 'Iqaluit', 'Whitehorse',
+            'Red Deer', 'Lethbridge', 'Medicine Hat', 'Grande Prairie', 'Kelowna', 'Kamloops', 'Saint John', 'Mississauga', 'Brampton', 'Hamilton',
+            'London', 'Gatineau', 'Sherbrooke', 'Prince Albert', 'Moose Jaw', 'Swift Current', 'Corner Brook', 'Truro', 'Sydney', 'Charlottetown',
+            'Summerside', 'Mount Pearl', 'Conception Bay South', 'Grand Falls-Windsor', 'Rankin Inlet', 'Carmacks',
+            'Dawson City', 'Watson Lake', 'Haines Junction', 'Fort Smith', 'Behchoko', 'Fort Simpson', 'Arviat', 'Baker Lake', 'Cambridge Bay', 'Igloolik',
         ];
 
         return $villes[array_rand($villes)];
@@ -278,7 +279,7 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
         $username = $this->first_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@1.ca'; // Utilisez le domaine .ca pour le Canada
+        $suffix = '@example.ca';
 
         return $username . $suffix;
     }
@@ -422,64 +423,11 @@ class CanadaFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
     public function food()
     {
         $platsCanadiens = [
-            "Poutine",
-            "Tourtière",
-            "Butter Tarts",
-            "Nanaimo Bar",
-            "BeaverTails",
-            "Peameal Bacon",
-            "Ketchup Chips",
-            "Caesar Cocktail",
-            "Butter Tart",
-            "Split Pea Soup",
-            "Bannock",
-            "Montreal-Style Bagel",
-            "Bison Burger",
-            "Fisherman's Brewis",
-            "Jigg's Dinner",
-            "Touton",
-            "Blueberry Grunt",
-            "Rappie Pie",
-            "Flip",
-            "Moose Stew",
-            "Wild Blueberry Pie",
-            "Acadian Meat Pie",
-            "Rappie Pie",
-            "Blueberry Grunt",
-            "Touton",
-            "Fisherman's Brewis",
-            "Jigg's Dinner",
-            "Moose Stew",
-            "Bison Burger",
-            "BeaverTails",
-            "Peameal Bacon",
-            "Ketchup Chips",
-            "Caesar Cocktail",
-            "Butter Tart",
-            "Split Pea Soup",
-            "Bannock",
-            "Montreal-Style Bagel",
-            "Blueberry Grunt",
-            "Rappie Pie",
-            "Flip",
-            "Wild Blueberry Pie",
-            "Acadian Meat Pie",
-            "Touton",
-            "Montreal Smoked Meat Sandwich",
-            "Nanaimo Bar",
-            "Pouding chômeur",
-            "Pouding aux bleuets",
-            "Kraft Dinner",
-            "Jambon à l'érable",
-            "Tarte au sucre",
-            "Pouding chômeur",
-            "Tarte au sucre",
-            "Pouding aux bleuets",
-            "Kraft Dinner",
-            "Jambon à l'érable",
-            "Tourtière",
-            "Poutine",
-            "Montreal Smoked Meat Sandwich"
+            'Poutine', 'Tourtière', 'Butter Tarts', 'Nanaimo Bar', 'BeaverTails', 'Peameal Bacon', 'Ketchup Chips',
+            'Caesar Cocktail', 'Butter Tart', 'Split Pea Soup', 'Bannock', 'Montreal-Style Bagel', 'Bison Burger',
+            "Fisherman's Brewis", "Jigg's Dinner", 'Touton', 'Blueberry Grunt', 'Rappie Pie', 'Flip', 'Moose Stew',
+            'Wild Blueberry Pie', 'Acadian Meat Pie', 'Montreal Smoked Meat Sandwich', 'Pouding chômeur',
+            'Pouding aux bleuets', 'Kraft Dinner', "Jambon à l'érable", 'Tarte au sucre',
         ];
 
         // Sélection aléatoire d'un nom de plat

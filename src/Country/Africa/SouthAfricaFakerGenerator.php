@@ -28,41 +28,11 @@ class SouthAfricaFakerGenerator extends BaseGenerator implements FakerGeneratorI
     public function last_name()
     {
         $lastNames = [
-            'Mthembu', 'Nkosi', 'Zulu', 'Van der Merwe', 'Maharaj', 'Pillay', 'Govender', 'Mkhize', 'Mokoena', 'Botha', 'Vilakazi', 'Mbatha', 'Smith', 'Ndlovu', 'Mlambo', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khumalo',
-            'Nxumalo', 'Radebe', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker',
-            'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo',
-            'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi',
-            'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy',
-            'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube',
-            'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo',
-            'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba',
-            'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo',
-            'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola',
-            'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma',
-            'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar',
-            'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo',
-            'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi',
-            'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo',
-            'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda',
-            'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo',
-            'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe',
-            'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi',
-            'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu',
-            'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane',
-            'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender',
-            'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu',
-            'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba',
-            'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza',
-            'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu',
-            'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu',
-            'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso',
-            'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday', 'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley',
-            'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede', 'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane',
-            'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya', 'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane',
-            'Mhlongo', 'Ntshangase', 'Nkosi', 'Zuma', 'Moloi', 'Mabaso', 'Motaung', 'Molefe', 'Sithole', 'Mthethwa', 'Mashaba', 'Mabuza', 'Maseko', 'Xaba', 'Mokwena', 'Naidoo', 'Reddy', 'Singh', 'Govender', 'Panday',
-            'Chetty', 'Naicker', 'Nair', 'Kumar', 'Pillai', 'Moodley', 'Munsamy', 'Nkosi', 'Mnguni', 'Vilakazi', 'Khumalo', 'Mthembu', 'Mtshali', 'Ngubane', 'Sibanda', 'Ncube', 'Dube', 'Moyo', 'Zulu', 'Gumede',
-            'Ndlovu', 'Sithole', 'Mlambo', 'Mhlongo', 'Mkhwanazi', 'Mthiyane', 'Mthembu', 'Ntuli', 'Zondi', 'Cele', 'Majola', 'Mthembu', 'Myeni', 'Langa', 'Zondo', 'Ndaba', 'Nene', 'Mlambo', 'Mashaba', 'Ngwenya',
-            'Dlamini', 'Mbuyiseni', 'Buthelezi', 'Khathi', 'Mdluli', 'Mthiyane', 'Mhlongo', 'Ntshangase'
+            'Botha', 'Buthelezi', 'Cele', 'Chetty', 'Dlamini', 'Dube', 'Govender', 'Gumede', 'Khumalo', 'Majola',
+            'Mashaba', 'Mbeki', 'Mhlongo', 'Mkhize', 'Mkhwanazi', 'Mlambo', 'Mnguni', 'Mokoena', 'Molefe', 'Motaung',
+            'Moyo', 'Mthembu', 'Mthethwa', 'Mtshali', 'Myeni', 'Naicker', 'Naidoo', 'Ncube', 'Ndaba', 'Ndlovu',
+            'Nene', 'Ngubane', 'Ngwenya', 'Nkosi', 'Ntuli', 'Panday', 'Pillay', 'Reddy', 'Sibanda', 'Singh',
+            'Sithole', 'Smith', 'Van der Merwe', 'Vilakazi', 'Zondo', 'Zulu', 'Zuma',
         ];
 
         $randomIndex = rand(0, count($lastNames) - 1);
@@ -78,37 +48,9 @@ class SouthAfricaFakerGenerator extends BaseGenerator implements FakerGeneratorI
     public function origins()
 {
     $origins = [
-        'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
-        'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda',
-        'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa',
-        'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga',
-        'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele',
-        'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho',
-        'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho',
-        'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
-        'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda',
-        'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa',
-        'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga',
-        'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele',
-        'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho',
-        'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho',
-        'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
-        'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda',
-        'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa',
-        'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga',
-        'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele',
-        'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho',
-        'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho',
-        'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
-        'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda',
-        'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa',
-        'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga',
-        'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele',
-        'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho',
-        'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan', 'San', 'Tsonga', 'Tshivenda', 'Sotho',
-        'Zoulou', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
-        'San', 'Tsonga', 'Tshivenda', 'Sotho'
-    ];
+            'Zulu', 'Xhosa', 'Afrikaner', 'Basotho', 'Bapedi', 'Venda', 'Tswana', 'Ndebele', 'Swazi', 'Khoisan',
+            'San', 'Tsonga', 'Tshivenda', 'Sotho', 'Coloured', 'Indian', 'English', 'Pedi', 'Shangaan', 'Vatsonga',
+        ];
 
     $randomIndex = rand(0, count($origins) - 1);
     return $origins[$randomIndex];
@@ -233,7 +175,7 @@ public function address()
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@27.SA';
+        $suffix = '@example.co.za';
 
         return $username . $suffix;
     }

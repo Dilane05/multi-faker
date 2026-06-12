@@ -13,95 +13,30 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     public function first_name()
     {
         $firstNames = [
-        'Aissatou', 'Astou', 'Bineta', 'Codou', 'Daba', 'Diarry', 'Diouma', 'Fatou', 'Fatoumata', 'Khadidiatou', 'Kine', 'Lissa', 'Mame', 'Ndeye', 'Nene',
-        'Nogaye', 'Ramatoulaye', 'Sokhna', 'Yacine', 'Ablaye', 'Abou', 'Amadou', 'Assane', 'Babacar', 'Boubacar', 'Cheikh', 'El Hadji', 'Ibrahima', 'Issa', 'Mamadou',
-        'Mor', 'Moussa', 'Ousmane', 'Pape', 'Samba', 'Serigne', 'Seydou', 'Souleymane', 'Tafsir', 'Thierno', 'Adjoua', 'Aliou', 'Ami', 'Amy', 'Anta', 'Babou', 'Bamba',
-        'Binta', 'Birane', 'Birima', 'Bouba', 'Cire', 'Coumba', 'Doudou', 'Fama', 'Farba', 'Fary', 'Fode', 'Gora', 'Gorgui', 'Ibou', 'Idrissa', 'Kane', 'Khady', 'Lamine',
-        'Latyr', 'Madické', 'Mame Diarra', 'Mame Khady', 'Mamoudou', 'Mansour', 'Maram', 'Mariama', 'Matar', 'Mbacké', 'Mbagnick', 'Mbaye', 'Mignane', 'Mody', 'Momar',
-        'Mouhamadou', 'Nafissatou', 'Ndèye', 'Ndiaga', 'Ndongo', 'Ngor', 'Omar', 'Ousseynou', 'Penda', 'Rokhaya', 'Sadio', 'Sagar', 'Salimata', 'Saliou', 'Samba', 'Seynabou',
-        'Sokhna', 'Souleye', 'Tafsir', 'Tamsir', 'Thierno', 'Yacine', 'Yandé', 'Yaram', 'Yaye', 'Youssou', 'Zenabou', 'Alassane', 'Assane', 'Babacar', 'Birama', 'Cheikh',
-        'Djibril', 'El Hadji', 'Ibrahima', 'Issa', 'Lamine', 'Mamadou', 'Mbaye', 'Mody', 'Mouhamed', 'Ousmane', 'Pape', 'Samba', 'Serigne', 'Seydou', 'Souleymane', 'Tafsir',
-        'Thierno', 'Adama', 'Awa', 'Binta', 'Coumba', 'Fatou', 'Khady', 'Maimouna', 'Ndeye', 'Rokhaya', 'Sokhna', 'Aïda', 'Bineta', 'Codou', 'Nogaye', 'Maty', 'Ablaye', 'Amadou',
-        'Cheikh', 'Doudou', 'Ibou', 'Mamoudou', 'Mbacké', 'Moussa', 'Ndiaga', 'Ndongo', 'Omar', 'Samba', 'Tafsir', 'Thierno', 'Yacine', 'Assane', 'Babacar', 'Birama', 'Djibril',
-        'Ibrahima', 'Issa', 'Lamine', 'Mamadou', 'Mbaye', 'Mody', 'Mouhamed', 'Ousmane', 'Pape', 'Samba', 'Serigne', 'Seydou', 'Souleymane', 'Tafsir', 'Thierno', 'Adama', 'Awa',
-        'Binta', 'Coumba', 'Fatou', 'Khady', 'Maimouna', 'Ndeye', 'Rokhaya', 'Sokhna', 'Aïda', 'Bineta', 'Codou', 'Nogaye', 'Maty', 'Ablaye', 'Amadou', 'Cheikh', 'Doudou', 'Ibou',
-        'Mamoudou', 'Mbacké', 'Moussa', 'Ndiaga', 'Ndongo', 'Omar', 'Samba', 'Tafsir', 'Thierno', 'Yacine', 'Aissatou', 'Astou', 'Bineta', 'Codou', 'Daba', 'Diarry', 'Diouma',
-        'Fatou', 'Fatoumata', 'Khadidiatou', 'Kine', 'Lissa', 'Mame', 'Ndeye', 'Nene', 'Nogaye', 'Ramatoulaye', 'Sokhna', 'Yacine', 'Ablaye', 'Abou', 'Amadou', 'Assane', 'Babacar',
-        'Boubacar', 'Cheikh', 'El Hadji', 'Ibrahima', 'Issa', 'Mamadou', 'Mor', 'Moussa', 'Ousmane', 'Pape', 'Samba', 'Serigne', 'Seydou', 'Souleymane', 'Tafsir', 'Thierno', 'Adjoua',
-        'Aliou', 'Ami', 'Amy', 'Anta', 'Babou', 'Bamba', 'Binta', 'Birane', 'Birima', 'Bouba', 'Cire', 'Coumba', 'Doudou', 'Fama', 'Farba', 'Fary', 'Fode', 'Gora', 'Gorgui', 'Ibou',
-        'Idrissa', 'Kane', 'Khady', 'Lamine', 'Latyr', 'Madické', 'Mame Diarra', 'Mame Khady', 'Mamoudou', 'Mansour', 'Maram', 'Mariama', 'Matar', 'Mbacké', 'Mbagnick', 'Mbaye', 'Mignane',
-        'Mody', 'Momar', 'Mouhamadou', 'Nafissatou', 'Ndèye', 'Ndiaga', 'Ndongo', 'Ngor', 'Omar', 'Ousseynou', 'Penda', 'Rokhaya', 'Sadio', 'Sagar', 'Salimata', 'Saliou', 'Samba', 'Seynabou',
-        'Sokhna', 'Souleye', 'Tafsir', 'Tamsir', 'Thierno', 'Yacine', 'Yandé', 'Yaram', 'Yaye', 'Youssou', 'Zenabou'
+            'Ablaye', 'Abou', 'Adama', 'Adjoua', 'Aissatou', 'Alassane', 'Aliou', 'Amadou', 'Ami', 'Amy',
+            'Anta', 'Assane', 'Astou', 'Awa', 'Aïda', 'Babacar', 'Babou', 'Bamba', 'Bineta', 'Binta',
+            'Birama', 'Birane', 'Birima', 'Bouba', 'Boubacar', 'Cheikh', 'Cire', 'Codou', 'Coumba', 'Daba',
+            'Diarry', 'Diouma', 'Djibril', 'Doudou', 'El Hadji', 'Fama', 'Farba', 'Fary', 'Fatou', 'Fatoumata',
+            'Fode', 'Gora', 'Gorgui', 'Ibou', 'Ibrahima', 'Idrissa', 'Issa', 'Kane', 'Khadidiatou', 'Khady',
+            'Kine', 'Lamine', 'Latyr', 'Lissa', 'Madické', 'Maimouna', 'Mamadou', 'Mame', 'Mame Diarra', 'Mame Khady',
+            'Mamoudou', 'Mansour', 'Maram', 'Mariama', 'Matar', 'Maty', 'Mbacké', 'Mbagnick', 'Mbaye', 'Mignane',
+            'Mody', 'Momar', 'Mor', 'Mouhamadou', 'Mouhamed', 'Moussa', 'Nafissatou', 'Ndeye', 'Ndiaga', 'Ndongo',
+            'Ndèye', 'Nene', 'Ngor', 'Nogaye', 'Omar', 'Ousmane', 'Ousseynou', 'Pape', 'Penda', 'Ramatoulaye',
+            'Rokhaya', 'Sadio', 'Sagar', 'Salimata', 'Saliou', 'Samba', 'Serigne', 'Seydou', 'Seynabou', 'Sokhna',
+            'Souleye', 'Souleymane', 'Tafsir', 'Tamsir', 'Thierno', 'Yacine', 'Yandé', 'Yaram', 'Yaye', 'Youssou',
+            'Zenabou',
         ];
 
-        $randomIndex = rand(0, count($firstNames) - 1);
-        return $firstNames[$randomIndex];
+        return $firstNames[array_rand($firstNames)];
     }
 
     public function last_name()
     {
         $lastNames = [
-            'Diop', 'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane',
-        'Niang', 'Gaye', 'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam',
-        'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna',
-        'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé',
-        'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane',
-        'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye',
-        'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo', 'Ndiaye',
-        'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang',
-        'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante',
-        'Camara', 'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane',
-        'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam',
-        'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow',
-        'Diallo', 'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé',
-        'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye',
-        'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye',
-        'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj',
-        'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye',
-        'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye',
-        'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang',
-        'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo',
-        'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf',
-        'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye',
-        'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye',
-        'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne',
-        'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene',
-        'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow',
-        'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye',
-        'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye',
-        'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj',
-        'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye',
-        'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye',
-        'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang',
-        'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo',
-        'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang',
-        'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara',
-        'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna',
-        'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo',
-        'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye',
-        'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop',
-        'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye',
-        'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye',
-        'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane',
-        'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo',
-        'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye',
-        'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow',
-        'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang',
-        'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye',
-        'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye',
-        'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall',
-        'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne',
-        'Ndiaye', 'Diop', 'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf',
-        'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam', 'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye', 'Dabo',
-        'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna', 'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé',
-        'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane', 'Fall', 'Dione', 'Sene', 'Sow', 'Diallo',
-        'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye', 'Diop', 'Sow', 'Diallo', 'Ndiaye',
-        'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr', 'Ndoye', 'Ndiaye', 'Thiam',
-        'Ndao', 'Dramé', 'Ndiaye', 'Kante', 'Camara', 'Ndiaye', 'Dabo', 'Mbodj', 'Sambou', 'Sagna', 'Ndiaye', 'Diagne', 'Ndiaye', 'Sane', 'Sagna',
-        'Ndiaye', 'Traoré', 'Ndiaye', 'Mbengue', 'Cissé', 'Sylla', 'Sow', 'Diagne', 'Thiam', 'Diallo', 'Diop', 'Faye', 'Ndiaye', 'Ndiaye', 'Kane',
-        'Fall', 'Dione', 'Sene', 'Sow', 'Diallo', 'Ndiaye', 'Diouf', 'Niang', 'Gueye', 'Faye', 'Ba', 'Sarr', 'Sow', 'Dramé', 'Diagne', 'Ndiaye',
-        'Diop', 'Sow', 'Diallo', 'Ndiaye', 'Fall', 'Cisse', 'Gueye', 'Faye', 'Ba', 'Kane', 'Niang', 'Gaye', 'Diouf', 'Niang', 'Dione', 'Seck', 'Sarr',
-        'Ndoye', 'Ndiaye', 'Thiam'
+            'Ba', 'Camara', 'Cisse', 'Cissé', 'Dabo', 'Diagne', 'Diallo', 'Dione', 'Diop', 'Diouf',
+            'Dramé', 'Fall', 'Faye', 'Gaye', 'Gueye', 'Kane', 'Kante', 'Mbengue', 'Mbodj', 'Ndao',
+            'Ndiaye', 'Ndoye', 'Niang', 'Sagna', 'Sambou', 'Sane', 'Sarr', 'Seck', 'Sene', 'Sow',
+            'Sylla', 'Thiam', 'Traoré',
         ];
 
         $randomIndex = rand(0, count($lastNames) - 1);
@@ -117,18 +52,10 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     public function origins()
     {
         $origins = [
-        'Sérère', 'Wolof', 'Pulaar', 'Mandinka', 'Diola', 'Soninké', 'Bambara', 'Toucouleur', 'Lebou', 'Balante',
-        'Manjaque', 'Mankanya', 'Bassari', 'Bedik', 'Fula', 'Jola', 'Safiné', 'Sarakhollé', 'Serer', 'Sofa', 'Soussou',
-        'Laalaa', 'Niominka', 'Sérèr-Nones', 'Djola-Fonyi', 'Pakhys', 'Badinka', 'Bagnoun', 'Yalunka', 'Dyola', 'Foni', 'Fulup',
-        'Fulfulde', 'Halpulaar', 'Kuwaataay', 'Laeli', 'Mandjak', 'Mandjak-Bañoun', 'Manjago', 'Mankanya', 'Pulaar-Fulfulde', 'Fula-Pulaar',
-        'Soninke', 'Susiya', 'Pular', 'Fulakunda', 'Karoninka', 'Badyara', 'Wolof-Judal', 'Wolofal', 'Pulhax', 'Aku',
-        'Serer-Sine', 'Serer-Wolof', 'Serer-Ndut', 'Serer-Palor', 'Serer-Laalaa', 'Serer-Noon', 'Serer-Safene', 'Serer-Safene', 'Serer-Logone', 'Serer-Siin',
-        'Serer-Soxe', 'Serer-Tokolor', 'Serer-Truef', 'Serer-Waro', 'Serer-Kaabu', 'Serer-Kajoor', 'Serer-Saroo', 'Serer-Tukulor', 'Serer-Diomani', 'Serer-Kiikuyu',
-        'Serer-Kuwaa', 'Serer-Mboona', 'Serer-Ngel', 'Serer-Siin', 'Serer-Safene', 'Serer-Logone', 'Serer-Siin', 'Serer-Soxe', 'Serer-Tokolor', 'Serer-Truef',
-        'Serer-Waro', 'Serer-Kaabu', 'Serer-Kajoor', 'Serer-Saroo', 'Serer-Tukulor', 'Serer-Diomani', 'Serer-Kiikuyu', 'Serer-Kuwaa', 'Serer-Mboona', 'Serer-Ngel',
-        'Serer-Ndut', 'Serer-Palor', 'Serer-Laalaa', 'Serer-Noon', 'Serer-Safene', 'Serer-Safene', 'Serer-Logone', 'Serer-Siin', 'Serer-Soxe', 'Serer-Tokolor',
-        'Serer-Truef', 'Serer-Waro', 'Serer-Kaabu', 'Serer-Kajoor', 'Serer-Saroo', 'Serer-Tukulor', 'Serer-Diomani', 'Serer-Kiikuyu', 'Serer-Kuwaa', 'Serer-Mboona',
-        'Serer-Ngel'
+            'Sérère', 'Wolof', 'Pulaar', 'Mandinka', 'Diola', 'Soninké', 'Bambara', 'Toucouleur', 'Lebou', 'Balante',
+            'Manjaque', 'Mankanya', 'Bassari', 'Bedik', 'Fula', 'Jola', 'Soussou', 'Laalaa', 'Niominka', 'Djola-Fonyi',
+            'Badinka', 'Bagnoun', 'Yalunka', 'Dyola', 'Foni', 'Fulup', 'Fulfulde', 'Halpulaar', 'Kuwaataay', 'Mandjak',
+            'Manjago', 'Pular', 'Fulakunda', 'Karoninka', 'Badyara', 'Wolofal',
         ];
 
         $randomIndex = rand(0, count($origins) - 1);
@@ -152,7 +79,7 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
             "Diourbel" => ["Diourbel", "Bambey", "Mbacké"],
             "Fatick" => ["Fatick", "Gossas", "Foundiougne"],
             "Kaffrine" => ["Kaffrine", "Birkilane", "Koungheul"],
-            "Kaolack" => ["Kaolack", "M'bour", "Nioro du Rip"],
+            "Kaolack" => ["Kaolack", "Kaffrine", "Nioro du Rip"],
             "Kédougou" => ["Kédougou", "Salemata", "Saraya"],
             "Kolda" => ["Kolda", "Médina Yoro Foulah", "Vélingara"],
             "Louga" => ["Louga", "Kébémer", "Linguère"],
@@ -171,11 +98,11 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     public function cities()
     {
         $villes = [
-        "Dakar", "Guédiawaye", "Pikine", "Diourbel", "Bambey", "Mbacké", "Fatick", "Gossas", "Foundiougne",
-        "Kaffrine", "Birkilane", "Koungheul", "Kaolack", "M'bour", "Nioro du Rip", "Kédougou", "Salemata", "Saraya",
-        "Kolda", "Médina Yoro Foulah", "Vélingara", "Louga", "Kébémer", "Linguère", "Matam", "Kanel", "Ranérou",
-        "Saint-Louis", "Dagana", "Podor", "Sédhiou", "Bounkiling", "Goudomp", "Tambacounda", "Goudiry", "Koumpentoum",
-        "Thiès", "Mbour", "Tivaouane", "Ziguinchor", "Bignona", "Oussouye"
+            'Dakar', 'Guédiawaye', 'Pikine', 'Diourbel', 'Bambey', 'Mbacké', 'Fatick', 'Gossas', 'Foundiougne',
+            'Kaffrine', 'Birkilane', 'Koungheul', 'Kaolack', 'Mbour', 'Nioro du Rip', 'Kédougou', 'Salemata', 'Saraya',
+            'Kolda', 'Médina Yoro Foulah', 'Vélingara', 'Louga', 'Kébémer', 'Linguère', 'Matam', 'Kanel', 'Ranérou',
+            'Saint-Louis', 'Dagana', 'Podor', 'Sédhiou', 'Bounkiling', 'Goudomp', 'Tambacounda', 'Goudiry', 'Koumpentoum',
+            'Thiès', 'Tivaouane', 'Ziguinchor', 'Bignona', 'Oussouye',
         ];
 
         return $villes[array_rand($villes)];
@@ -260,7 +187,7 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@221.sen';
+        $suffix = '@example.sn';
 
         return $username . $suffix;
     }
@@ -388,7 +315,6 @@ class SenegalFakerGenerator extends BaseGenerator implements FakerGeneratorInter
             "Yassa Poulet",
             "Yassa Poisson",
             "Ceebu Jen",
-            "Camarão à Brás",
             "Dibi",
             "Chere",
             "Boulettes de Poisson",

@@ -2,108 +2,41 @@
 
 namespace Cupidontech\MultiFaker\Country\Europe;
 
+use Illuminate\Support\Str;
 use Faker\Generator as BaseGenerator;
 use Cupidontech\MultiFaker\Contracts\FakerGeneratorInterface;
 
 class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInterface
 {
-    // Implémentez les méthodes de génération spécifiques à la France ici
+    // Implémentez les méthodes de génération spécifiques à l'Allemagne ici
     public function first_name()
     {
-        // $firstNames = ['Jean', 'Marie', 'Pierre', 'Elise', 'Françoise'];
         $firstNames = [
-            'Felix', 'Hanna', 'Isabella', 'Marie', 'Lucas',
-            'Emma', 'Luisa', 'Luca', 'Leon', 'Sophia',
-            'Samuel', 'Clara', 'David', 'Antonia', 'Laura',
-            'Tim', 'Sophie', 'Elias', 'Mia', 'Paul',
-            'Sarah', 'Maximilian', 'Katharina', 'Lena', 'Jonas',
-            'Johanna', 'Matteo', 'Selina', 'Nicolas', 'Amelie',
-            'Louis', 'Emily', 'Michael', 'Valerie', 'Elias', 'Miriam',
-            'Niklas', 'Lina', 'Niklas', 'Hannah',
-            'Felix', 'Sophia', 'Emma', 'Finn', 'Paulina', 'Tom',
-            'Johanna', 'Tim', 'Charlotte', 'Leon',
-            'Laura', 'Lena', 'Alexander', 'Jana', 'Luca', 'Lotta',
-            'Emil', 'Zoe', 'Laura', 'Jonas',
-            'Victoria', 'Luca', 'Johanna', 'Mia', 'Leo', 'Antonia',
-            'Lukas', 'Marie', 'Moritz', 'Emily',
-            'Philipp', 'Emilia', 'Noah', 'Vanessa', 'Alexander',
-            'Pia', 'Niklas', 'Marie', 'Elias', 'Emma',
-            'Paul', 'Sophie', 'Simon', 'Emilia', 'Julius', 'Maria',
-            'Maximilian', 'Luisa', 'Ben', 'Clara',
-            'Tim', 'Leonie', 'Niklas', 'Katharina', 'Luis', 'Laura',
-            'David', 'Johanna', 'Mia', 'Finn',
-            'Hannah', 'Nico', 'Clara', 'Simon', 'Leonie', 'Finn',
-            'Sophia', 'Leo', 'Emily', 'Tom',
-            'Anna', 'Jan', 'Paulina', 'Felix', 'Charlotte', 'Tim',
-            'Antonia', 'Emil', 'Hanna', 'Samuel',
-            'Mira', 'Jonas', 'Jana', 'Lena', 'Emil', 'Emily', 'Samuel',
-            'Marie', 'Lukas', 'Katharina',
-            'Paul', 'Jule', 'Maria', 'Julian', 'Selina', 'Luca', 'Lea',
-            'Matteo', 'Lina', 'David',
-            'Emilia', 'Vincent', 'Melina', 'Elias', 'Lotta', 'Timo',
-            'Luisa', 'Tim', 'Sofia', 'Maximilian',
-            'Pia', 'Leon', 'Maria', 'Alexander', 'Emily', 'Niklas',
-            'Marie', 'Leo', 'Hannah', 'Jonas',
-            'Elena', 'Luis', 'Lina', 'Noah', 'Anna', 'Niklas',
-            'Sophie', 'Moritz', 'Laura', 'Felix',
-            'Lea', 'Samuel', 'Zoe', 'Elias', 'Sophie', 'Luca',
-            'Emilia', 'Philipp', 'Johanna', 'Leo',
-            'Mia', 'Tom', 'Marie', 'Vincent', 'Selina', 'Maximilian',
-            'Melina', 'David', 'Lotta', 'Elias',
-            'Katharina', 'Tim', 'Hannah', 'Clara', 'Jan', 'Paulina',
-            'Felix', 'Charlotte', 'Leonie', 'Antonia'
+            'Felix', 'Hanna', 'Isabella', 'Marie', 'Lucas', 'Emma', 'Luisa', 'Luca', 'Leon', 'Sophia',
+            'Samuel', 'Clara', 'David', 'Antonia', 'Laura', 'Tim', 'Sophie', 'Elias', 'Mia', 'Paul',
+            'Sarah', 'Maximilian', 'Katharina', 'Lena', 'Jonas', 'Johanna', 'Matteo', 'Selina', 'Nicolas', 'Amelie',
+            'Louis', 'Emily', 'Michael', 'Valerie', 'Miriam', 'Niklas', 'Lina', 'Hannah', 'Finn', 'Paulina',
+            'Tom', 'Charlotte', 'Alexander', 'Jana', 'Lotta', 'Emil', 'Zoe', 'Victoria', 'Leo', 'Lukas',
+            'Moritz', 'Philipp', 'Emilia', 'Noah', 'Vanessa', 'Pia', 'Ben', 'Leonie', 'Luis', 'Nico',
+            'Simon', 'Julius', 'Maria', 'Jule', 'Julian', 'Lea', 'Vincent', 'Melina', 'Timo', 'Sofia',
+            'Elena', 'Anna', 'Jan', 'Mira',
         ];
 
-        $randomIndex = rand(0, count($firstNames) - 1);
-        return $firstNames[$randomIndex];
+        return $firstNames[array_rand($firstNames)];
     }
 
     public function last_name()
     {
 
         $lastNames = [
-            'Schmidt', 'Müller', 'Schneider', 'Fischer', 'Weber',
-            'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann',
-            'Schäfer', 'Koch', 'Bauer', 'Richter', 'Klein', 'Wolf',
-            'Schröder', 'Neumann', 'Schwarz', 'Zimmermann',
-            'Braun', 'Krüger', 'Hofmann', 'Hartmann', 'Lange',
-            'Schmitt', 'Werner', 'Schmitz', 'Krause', 'Meier',
-            'Lehmann', 'Schmid', 'Schulze', 'Maier', 'Köhler',
-            'Herrmann', 'Walter', 'Mayer', 'Huber', 'Kaiser',
-            'Fuchs', 'Peters', 'Lang', 'Scholz', 'Möller', 'Weiß',
-            'Jung', 'Hahn', 'Schubert', 'Vogel',
-            'Friedrich', 'Keller', 'Günther', 'Frank', 'Berger',
-            'Winkler', 'Roth', 'Beck', 'Lorenz', 'Baumann',
-            'Franke', 'Albrecht', 'Schuster', 'Simon', 'Ludwig',
-            'Böhm', 'Winter', 'Kraus', 'Martin', 'Schumacher',
-            'Krämer', 'Vogt', 'Stein', 'Jäger', 'Otto', 'Sommer',
-            'Graf', 'Heinrich', 'Seidel', 'Riedl',
-            'Hein', 'Pohl', 'Maurer', 'Schreiber', 'Schulte',
-            'Kühn', 'Fink', 'Bergmann', 'Thomas', 'Voigt',
-            'Sauer', 'Arnold', 'Brandt', 'Horn', 'Kaufmann',
-            'Kern', 'Wolff', 'Lindner', 'Ernst', 'Lutz',
-            'Baum', 'Haas', 'Brenner', 'Hammer', 'Picard',
-            'Schneider', 'Leroy', 'Dupont', 'Moreau', 'Simon',
-            'Becker', 'Klein', 'Wagner', 'Hoffmann', 'Schulz',
-            'Müller', 'Schmidt', 'Koch', 'Meier', 'Fischer',
-            'Schäfer', 'Weber', 'Schneider', 'Werner', 'Lange',
-            'Zimmermann', 'Schröder', 'Meyer', 'Huber', 'Schwarz',
-            'Walter', 'Krause', 'Fuchs', 'Braun', 'Köhler', 'Hartmann',
-            'Lehmann', 'Kraus', 'Schubert', 'Herrmann',
-            'Kaiser', 'Frank', 'Schmid', 'Peters', 'Scholz', 'Bauer',
-            'Günther', 'Simon', 'Friedrich', 'Schuster',
-            'Baumann', 'Lang', 'Mayer', 'Franke', 'Keller',
-            'Otto', 'Böhm', 'Roth', 'Berger', 'Beck',
-            'Winkler', 'Stein', 'Jung', 'Sommer', 'Riedl',
-            'Krämer', 'Martin', 'Ludwig', 'Kühn', 'Vogt',
-            'Lorenz', 'Hein', 'Seidel', 'Vogel', 'Graf',
-            'Kern', 'Hammer', 'Thomas', 'Sauer', 'Ernst',
-            'Brandt', 'Schreiber', 'Baum', 'Arnold', 'Maurer',
-            'Kaufmann', 'Schulte', 'Bergmann', 'Haas', 'Lutz',
-            'Lindner', 'Pohl', 'König', 'Wolff', 'Becker',
-            'Klein', 'Wagner', 'Hoffmann', 'Schulz', 'Müller',
-            'Schmidt', 'Koch', 'Meier', 'Fischer', 'Schäfer',
-            'Weber', 'Schneider', 'Werner', 'Lange', 'Zimmermann'
+            'Schmidt', 'Müller', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker', 'Schulz', 'Hoffmann',
+            'Schäfer', 'Koch', 'Bauer', 'Richter', 'Klein', 'Wolf', 'Schröder', 'Neumann', 'Schwarz', 'Zimmermann',
+            'Braun', 'Krüger', 'Hofmann', 'Hartmann', 'Lange', 'Schmitt', 'Werner', 'Schmitz', 'Krause', 'Meier',
+            'Lehmann', 'Schmid', 'Schulze', 'Maier', 'Köhler', 'Herrmann', 'Walter', 'Mayer', 'Huber', 'Kaiser',
+            'Fuchs', 'Peters', 'Lang', 'Scholz', 'Möller', 'Weiß', 'Jung', 'Hahn', 'Schubert', 'Vogel',
+            'Friedrich', 'Keller', 'Günther', 'Frank', 'Berger', 'Winkler', 'Roth', 'Beck', 'Lorenz', 'Baumann',
+            'Franke', 'Albrecht', 'Schuster', 'Simon', 'Ludwig', 'Böhm', 'Winter', 'Kraus', 'Martin', 'Schumacher',
+            'Krämer', 'Vogt', 'Stein', 'Jäger', 'Otto', 'Sommer', 'Graf', 'Heinrich', 'Seidel', 'Riedl',
         ];
         $randomIndex = rand(0, count($lastNames) - 1);
         return $lastNames[$randomIndex];
@@ -130,9 +63,9 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     function region()
     {
         $regions = [
-            'Baden-Württemberg', 'Bavaria', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hesse', 'Lower Saxony', 'Mecklenburg-Vorpommern', 'North Rhine-Westphalia',
-            'Rhineland-Palatinate', 'Saarland', 'Saxony', 'Saxony-Anhalt', 'Schleswig-Holstein', 'Thuringia', 'Schleswig-Holstein', 'Thuringia', 'North Rhine-Westphalia', 'Hesse',
-            'Lower Saxony', 'Saxony', 'Bremen', 'Mecklenburg-Vorpommern', 'Brandenburg', 'Rhineland-Palatinate', 'Saarland', 'Saxony-Anhalt', 'Berlin', 'Hamburg',
+            'Baden-Württemberg', 'Bavaria', 'Berlin', 'Brandenburg', 'Bremen', 'Hamburg', 'Hesse', 'Lower Saxony',
+            'Mecklenburg-Vorpommern', 'North Rhine-Westphalia', 'Rhineland-Palatinate', 'Saarland', 'Saxony',
+            'Saxony-Anhalt', 'Schleswig-Holstein', 'Thuringia',
         ];
 
         $regionAleatoire = $regions[array_rand($regions)];
@@ -167,50 +100,30 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     public function cities()
     {
         $villes = [
-            "Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt",
-            "Stuttgart", "Düsseldorf", "Dortmund", "Essen", "Leipzig",
-            "Bremen", "Hanover", "Dresden", "Nuremberg", "Duisburg",
-            "Bochum", "Wuppertal", "Bielefeld", "Bonn", "Münster",
-            "Karlsruhe", "Mannheim", "Augsburg", "Wiesbaden", "Gelsenkirchen",
-            "Mönchengladbach", "Braunschweig", "Kiel", "Chemnitz", "Aachen",
-            "Halle (Saale)", "Magdeburg", "Freiburg", "Krefeld",
-            "Lübeck", "Mainz", "Erfurt", "Oberhausen", "Rostock", "Kassel",
-            "Hagen", "Hamm", "Saarbrücken", "Mülheim an der Ruhr",
-            "Potsdam", "Ludwigshafen", "Oldenburg", "Leverkusen", "Osnabrück", "Solingen",
-            "Heidelberg", "Herne", "Neuss", "Darmstadt", "Paderborn",
-            "Regensburg", "Ingolstadt", "Würzburg", "Fürth", "Wolfsburg",
-            "Ulm", "Offenbach", "Heilbronn", "Pforzheim", "Göttingen",
-            "Bottrop", "Trier", "Recklinghausen", "Reutlingen", "Bremerhaven",
-            "Koblenz", "Bergisch Gladbach", "Jena", "Remscheid",
-            "Erlangen", "Moers", "Siegen", "Hildesheim", "Salzgitter", "Cottbus",
-            "Gera", "Kaiserslautern", "Schwerin", "Hamm", "Herne",
-            "Neuss", "Darmstadt", "Paderborn", "Regensburg", "Ingolstadt", "Würzburg",
-            "Fürth", "Wolfsburg", "Ulm", "Offenbach", "Heilbronn",
-            "Pforzheim", "Göttingen", "Bottrop", "Trier", "Recklinghausen", "Reutlingen",
-            "Bremerhaven", "Koblenz", "Bergisch Gladbach", "Jena",
-            "Remscheid", "Erlangen", "Moers", "Siegen", "Hildesheim", "Salzgitter", "Cottbus",
-            "Gera", "Kaiserslautern", "Schwerin", "Hamm", "Herne",
-            "Neuss", "Darmstadt", "Paderborn", "Regensburg", "Ingolstadt", "Würzburg",
-            "Fürth", "Wolfsburg", "Ulm", "Offenbach", "Heilbronn",
-            "Pforzheim", "Göttingen", "Bottrop", "Trier", "Recklinghausen", "Reutlingen",
-            "Bremerhaven", "Koblenz", "Bergisch Gladbach", "Jena",
-            "Remscheid", "Erlangen", "Moers", "Siegen", "Hildesheim", "Salzgitter", "Cottbus",
-            "Gera", "Kaiserslautern", "Schwerin",
+'Aachen', 'Augsburg', 'Bergisch Gladbach', 'Berlin', 'Bielefeld', 'Bochum', 'Bonn', 'Bottrop', 'Braunschweig', 'Bremen',
+            'Bremerhaven', 'Chemnitz', 'Cologne', 'Cottbus', 'Darmstadt', 'Dortmund', 'Dresden', 'Duisburg', 'Düsseldorf', 'Erfurt',
+            'Erlangen', 'Essen', 'Frankfurt', 'Freiburg', 'Fürth', 'Gelsenkirchen', 'Gera', 'Göttingen', 'Hagen', 'Halle (Saale)',
+            'Hamburg', 'Hamm', 'Hanover', 'Heidelberg', 'Heilbronn', 'Herne', 'Hildesheim', 'Ingolstadt', 'Jena', 'Kaiserslautern',
+            'Karlsruhe', 'Kassel', 'Kiel', 'Koblenz', 'Krefeld', 'Leipzig', 'Leverkusen', 'Ludwigshafen', 'Lübeck', 'Magdeburg',
+            'Mainz', 'Mannheim', 'Moers', 'Munich', 'Mönchengladbach', 'Mülheim an der Ruhr', 'Münster', 'Neuss', 'Nuremberg', 'Oberhausen',
+            'Offenbach', 'Oldenburg', 'Osnabrück', 'Paderborn', 'Pforzheim', 'Potsdam', 'Recklinghausen', 'Regensburg', 'Remscheid', 'Reutlingen',
+            'Rostock', 'Saarbrücken', 'Salzgitter', 'Schwerin', 'Siegen', 'Solingen', 'Stuttgart', 'Trier', 'Ulm', 'Wiesbaden',
+            'Wolfsburg', 'Wuppertal', 'Würzburg',
         ];
         return $villes[array_rand($villes)];
     }
 
     public function coordinates()
     {
-        // Limites géographiques du Cameroun (latitude et longitude)
+        // Limites géographiques de l'Allemagne (latitude et longitude)
         $limites = [
             'north' => 55.058334,
             'south' => 47.270111,
             'west' => 5.866240,
-            'east' => 15.041896,     // Longitude Est
+            'east' => 15.041896,
         ];
 
-        // Génération de coordonnées aléatoires dans les limites du Cameroun
+        // Génération de coordonnées aléatoires dans les limites de l'Allemagne
         $latitude = $limites['south'] + mt_rand() / mt_getrandmax() * ($limites['north'] - $limites['south']);
         $longitude = $limites['west'] + mt_rand() / mt_getrandmax() * ($limites['east'] - $limites['west']);
 
@@ -293,7 +206,7 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@49.com';
+        $suffix = '@example.de';
 
         return $username . $suffix;
     }
@@ -423,8 +336,6 @@ class GermanyFakerGenerator extends BaseGenerator implements FakerGeneratorInter
             "Wiener Schnitzel",
             "Kartoffelsalat",
             "Rouladen",
-            "Goulash",
-            "Rösti",
             "Sauerkraut",
             "Brezen (Pretzels)",
             "Kartoffelsuppe",

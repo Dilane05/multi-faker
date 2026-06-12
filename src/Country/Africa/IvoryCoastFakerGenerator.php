@@ -13,30 +13,10 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     public function first_name()
     {
         $firstNames = [
-            'Kouamé', 'Konan', 'Koffi', 'Aya', "N'Guessan", "N'Dri", 'Kouassi', 'Ahou', 'Ehouman', 'Gnagne', 'Ouattara', 'Yao', 'Kouadio',
-            'Aka', 'Gbêkê', "N'Goran", 'Soro', 'Diarrassouba', 'Fofana', 'Touré', 'Bamba', 'Coulibaly', 'Traoré', 'Sangaré', 'Dembele', 'Koné',
-            'Bakayoko', 'Kamara', 'Keïta', 'Sidibé', 'Togola', 'Kante', 'Diarra', 'Barry', 'Bah', 'Dabo', 'Sow', 'Diallo', 'Soumah', 'Camara',
-            'Cissé', 'Diakité', 'Kamagate', 'Niane', 'Babou', 'Ba', 'Cissoko', 'Drame', 'Doumbia', 'Fane', 'Kanoute', 'Ndiaye', 'Sissoko',
-            'Tandia', 'Toure', 'Bouaré', 'Bagayoko', 'Dabo', 'Fane', 'Fofana', 'Fadiga', 'Gakou', 'Keita', 'Koulibaly', 'Kante', 'Konate',
-            'Ndao', 'Sow', 'Soumah', 'Tounkara', 'Traoré', 'Sangaré', 'Baradji', 'Dembele', 'Diabaté', 'Doumbia', 'Mariko', 'Sidibe', 'Cama',
-            'Cisse', 'Diarra', 'Doucouré', 'Kamissoko', 'Koné', 'Traoré', 'Sow', 'Toure', 'Diakité', 'Bagayoko', 'Dabo', 'Fofana', 'Kané',
-            'Kante', 'Konaté', 'Sow', 'Traoré', 'Cissoko', 'Diallo', 'Diarra', 'Sangaré', 'Sissoko', 'Bamba', 'Barry', 'Diabaté', 'Doumbia',
-            'Fofana', 'Kamara', 'Kante', 'Sylla', 'Toure', 'Bakayoko', 'Diarra', 'Fofana', 'Kamagate', 'Sangaré', 'Sidibe', 'Toure', 'Bamba',
-            'Coulibaly', 'Diarra', 'Diarra', 'Sangaré', 'Traoré', 'Soro', 'Fofana', 'Kante', 'Kouassi', 'Bamba', 'Diabate', 'Sangare', 'Sidibe',
-            'Sow', 'Toure', 'Bakayoko', 'Barry', 'Cisse', 'Diarra', 'Doumbia', 'Kante', 'Traoré', 'Bamba', 'Bakayoko', 'Diakité', 'Diomandé',
-            'Doumbia', 'Fofana', 'Kouassi', 'Koulibaly', 'Sangaré', 'Traoré', 'Bamba', 'Bakayoko', 'Cissé', 'Diakité', 'Doumbia', 'Fofana',
-            'Kamara', 'Kouassi', 'Sangaré', 'Traoré', 'Bagayoko', 'Bamba', 'Cissé', 'Coulibaly', 'Diarra', 'Diarra', 'Fofana', 'Kante',
-            'Koné', 'Sidibe', 'Sow', 'Toure', 'Bakayoko', 'Barry', 'Bamba', 'Cissé', 'Diarra', 'Doumbia', 'Fofana', 'Kamara', 'Kante',
-            'Koné', 'Sangaré', 'Sidibe', 'Toure', 'Bagayoko', 'Bamba', 'Barry', 'Cissé', 'Diarra', 'Doumbia', 'Fofana', 'Kamara', 'Kante',
-            'Koné', 'Sangaré', 'Sidibe', 'Toure', 'Bakayoko', 'Barry', 'Bamba', 'Cissé', 'Diarra', 'Doumbia', 'Fofana', 'Kamara', 'Kante',
-            'Koné', 'Sangaré', 'Sidibe', 'Toure', 'Bakayoko', 'Barry', 'Bamba', 'Cissé', 'Diarra', 'Doumbia', 'Fofana', 'Kamara', 'Kante',
-            'Koné', 'Sangaré', 'Sidibe', 'Toure', 'Ahou', 'Akissi', 'Abla', 'Adjoua', 'Affoue', 'Affouet', 'Aissatou',
-            'Aka', 'Akissi', 'Akoua', 'Aminata', 'Awa', 'Binta', 'Chantal', 'Fanta',
-            'Fatoumata', 'Gnouma', 'Kadiatou', 'Koffi', 'Kouadio', 'Kouakou', 'Lala',
-            'Madou', 'Maimouna', 'Mariam', "N'da", "N'dri", "N'tia",
-            "N'sa", "N'tamon", "N'te", "N'tchou", "'N'tia", 'Ouattara', 'Sanogo',
-            'Sidibe', 'Soumahoro', 'Soumare', 'Soulemane', 'Toure', 'Traore', 'Yao',
-            'Yeboua', 'Yeo', 'Zerbo', 'Zongo'
+            'Kouamé', 'Konan', 'Koffi', 'Aya', 'Kouassi', 'Ahou', 'Ehouman', 'Gnagne', 'Yao', 'Kouadio',
+            'Akissi', 'Abla', 'Adjoua', 'Affoue', 'Affouet', 'Aissatou', 'Akoua', 'Aminata', 'Awa', 'Binta',
+            'Chantal', 'Fanta', 'Fatoumata', 'Gnouma', 'Kadiatou', 'Lala', 'Madou', 'Maimouna', 'Mariam', 'Adama',
+            'Amadou', 'Moussa', 'Salif', 'Youssouf', 'Abdoulaye', 'Ibrahim', 'Oumar', 'Mamadou', 'Seydou', 'Drissa',
         ];
 
         $randomIndex = rand(0, count($firstNames) - 1);
@@ -46,16 +26,10 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     public function last_name()
     {
         $lastNames = [
-            'Aka', 'Akissi', 'Kouassi', 'Kouakou', 'Brou', 'Djedje', 'Diop', 'Fofana', 'Kone', "N'Diaye",
-            "N'Guessan", 'Ouattara', 'Sylla', 'Toure', 'Traore', 'Yao', 'Yeboua', 'Abo', 'Aboua', 'Adiko',
-            'Allou', 'Assouan', 'Bamba', 'Barro', 'Ble', 'Camara', 'Cisse', 'Coulibaly', 'Dabo', 'Diarra',
-            'Doumbia', 'Fofana', 'Kamara', 'Kante', 'Kone', 'Konan', 'Kouame', 'Kouassi', 'Mamadou', 'Sanogo',
-            'Sawadogo', 'Sissoko', 'Soumare', 'Toure', 'Yameogo', 'Yoda', 'Zongo', 'Bah', 'Dabo', 'Diallo',
-            'Drame', 'Jalloh', 'Keita', 'Ndiaye', 'Sow', 'Sylla', 'Thiam', 'Wane', 'Ba', 'Camara', 'Diallo',
-            'Diawara', 'Faye', 'Gueye', 'Lopez', 'Moreno', 'Ndiaye', 'Nguyen', 'Sagna', 'Sokhna', 'Traore',
-            'Abdoulaye', 'Ali', 'Bangoura', 'Camara', 'Cisse', 'Conde', 'Diakite', 'Diallo', 'Diané', 'Fofana',
-            'Kaba', 'Keita', 'Magassa', 'Mamadou', 'Sacko', 'Soumah', 'Tounkara', 'Touré', 'Traoré', 'Yansané',
-            'Aka', 'Akissi', 'Kouassi', 'Kouakou', 'Brou', 'Djedje', 'Diop', 'Fofana', 'Kone'
+            'Aka', 'Bamba', 'Bakayoko', 'Barry', 'Brou', 'Camara', 'Cissé', 'Coulibaly', 'Dabo', 'Diabaté',
+            'Diakité', 'Diallo', 'Diarra', 'Djedje', 'Diop', 'Doumbia', 'Fofana', 'Kamara', 'Kante', 'Koné',
+            'Kouamé', 'Kouassi', 'Ouattara', 'Sanogo', 'Sangaré', 'Sidibé', 'Soro', 'Soumahoro', 'Sylla', 'Touré',
+            'Traoré', 'Yao', 'Yeboua', 'Zongo',
         ];
 
         $randomIndex = rand(0, count($lastNames) - 1);
@@ -71,19 +45,9 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     public function origins()
     {
         $origins = [
-            'Akan', 'Bété', 'Baoulé', 'Sénoufo', 'Gour', 'Malinké', 'Dan', 'Gourounsi', 'Krou', 'Koyaka',
-            'Koulango', 'Saraka', 'Lobi', 'Yacouba', 'Yacouba', 'Niarafolo', 'Bakwé', 'Gban', 'Gourounsi',
-            'Gouro', 'Koulango', 'Moba', 'Tagbana', 'Bédiaré', 'Dida', 'Gueré', 'Kroumen', 'Wobé', 'Kouya',
-            'Dida', 'Lobi', 'Nafaanra', 'Sénoufo', 'Ndyuka', 'Krou', "N'ko", 'Saro', 'Sérè', 'Wobé', 'Yacouba',
-            'Bété', 'Dida', 'Gban', 'Gouro', 'Koulango', 'Moba', 'Tagbana', 'Wè', 'Gurma', 'Koulango', 'Krobu',
-            'Toro', 'Kran', 'Krou', 'Bété', 'Gban', 'Gouro', 'Lobi', 'Tagbana', 'Wè', 'Yacouba', 'Yacouba',
-            'Kran', 'Krou', 'Kwèlè', 'Toro', 'Abbey', 'Adangme', 'Afenmai', 'Agatu', 'Akoko', 'Akpo', 'Alumu',
-            'Anufo', 'Asa', 'Atyap', 'Bini', 'Degema', 'Egun', 'Efik', 'Egbema', 'Ekpeye', 'Engenni', 'Etkywa',
-            'Gbaya', 'Gbede', 'Gokana', 'Ibibio', 'Ibo', 'Ibani', 'Idoma', 'Ijaw', 'Ika', 'Isoko', 'Izon',
-            'Kadara', 'Kainji', 'Kaje', 'Kakanda', 'Kambari', 'Kanufi', 'Kapin', 'Kanuri', 'Koma', 'Koromfé',
-            'Kubu', 'Kulung', 'Lufu', 'Mbum', 'Mama', 'Mumuye', 'Ndokwa', 'Nkporo', 'Nnyi', 'Nnyobo', 'Nyangbo',
-            'Nyangi', 'Nyon', 'Ogbia', 'Oko', 'Oron', 'Owan', 'Sariki', 'Tèèn', 'Tiv', 'Urhobo', 'Utonkon', 'Uyanga',
-            'Yako', 'Yama', 'Yekhee', 'Yen', 'Yukuben'
+            'Akan', 'Baoulé', 'Bété', 'Sénoufo', 'Malinké', 'Dan', 'Gour', 'Gouro', 'Krou', 'Lobi',
+            'Yacouba', 'Wè', 'Koulango', 'Dida', 'Guéré', 'Tagbana', 'Abron', 'Agni', 'Abbey', 'Koyaka',
+            'Wobé', 'Nafana', 'Gban', 'Gourounsi', 'Saraka', 'Bakwé',
         ];
 
         $randomIndex = rand(0, count($origins) - 1);
@@ -93,11 +57,11 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     function region()
     {
         $regions = [
-            "Agnéby", "Bafing", "Bagoué", "Bélier", "Béré", "Bouaké", "Bounkani", "Cavally", "Denguélé", "Fromager",
+            "Agnéby", "Bafing", "Bagoué", "Bélier", "Béré", "Bounkani", "Cavally", "Denguélé", "Fromager",
             "Gôh", "Gbêkê", "Gbôklé", "Hambol", "Haut-Sassandra", "Iffou", "Indénié-Djuablin", "Kabadougou",
             "Kabadougou-Bafing-Folon", "La Mé", "Lacs", "Lagunes", "Lôh-Djiboua", "Marahoué", "Moyen-Cavally",
             "Moyen-Comoé", "Moyen-Logba", "N'zi-Comoé", "N'zi-Iffou", "Poro", "San-Pédro", "Savanes", "Sud-Bandama",
-            "Sud-Comoé", "Sud-Comoé", "Tchologo", "Tonkpi", "Vallée du Bandama", "Worodougou", "Yamoussoukro",
+            "Sud-Comoé", "Tchologo", "Tonkpi", "Vallée du Bandama", "Worodougou", "Yamoussoukro",
             "Zanzan"
         ];
 
@@ -157,12 +121,11 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     public function cities()
     {
         $villes = [
-            "Abidjan", "Yamoussoukro", "Bouaké", "Daloa", "San Pedro", "Korhogo", "Man", "Divo", "Gagnoa", "Abengourou",
-            "Séguéla", "Odienné", "Tiassalé", "Bondoukou", "Sinfra", "Dimbokro", "Katiola", "Agboville", "Grand-Bassam",
-            "Agnibilékrou", "Bongouanou", "Ferkessédougou", "Dabou", "Toumodi", "Duékoué", "Bouna", "Aboisso",
-            "Bangolo", "Akoupé", "Daoukro", "Issia", "Sassandra", "Adzopé", "Toulepleu", "Béoumi", "Korhogo", "Bingerville",
-            "Vavoua", "Guiglo", "Kounahiri", "Tengréla", "Sakassou", "Tabou", "Oumé", "Séguéla", "Bouaké", "Man",
-            "Daloa", "Sinfra", "Katiola", "San Pedro", "Yamoussoukro", "Abidjan"
+            'Abidjan', 'Yamoussoukro', 'Bouaké', 'Daloa', 'San Pedro', 'Korhogo', 'Man', 'Divo', 'Gagnoa', 'Abengourou',
+            'Séguéla', 'Odienné', 'Tiassalé', 'Bondoukou', 'Sinfra', 'Dimbokro', 'Katiola', 'Agboville', 'Grand-Bassam',
+            'Agnibilékrou', 'Bongouanou', 'Ferkessédougou', 'Dabou', 'Toumodi', 'Duékoué', 'Bouna', 'Aboisso',
+            'Bangolo', 'Akoupé', 'Daoukro', 'Issia', 'Sassandra', 'Adzopé', 'Toulepleu', 'Béoumi', 'Bingerville',
+            'Vavoua', 'Guiglo', 'Kounahiri', 'Tengréla', 'Sakassou', 'Tabou', 'Oumé',
         ];
 
         return $villes[array_rand($villes)];
@@ -246,7 +209,7 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@225.civ';
+        $suffix = '@example.ci';
 
         return $username . $suffix;
     }
@@ -370,55 +333,14 @@ class IvoryCoastFakerGenerator extends BaseGenerator implements FakerGeneratorIn
     function food()
     {
         $platsIvoiriens = [
-            "Attieké",
-            "Foutou Banane",
-            "Foutou Igname",
-            "Garba",
-            "Choukouya",
-            "Poulet DG",
-            "Kedjenou de poulet",
-            "Alloco",
-            "Aloko avec poisson braisé",
-            "Bouillie",
-            "Bouillie d'arachide",
-            "Braffet",
-            "Cabri Massala",
-            "Chikwangue",
-            "Crevettes Grillees",
-            "Djoumblé",
-            "Klaklo",
-            "Kédjénou de poulet",
-            "Garba",
-            "Gbofloto",
-            "Igname Glacée",
-            "Kédjénou de poulet",
-            "Kédjénou de Poisson",
-            "Lafindé",
-            "Mafé",
-            "Moussoukou",
-            "Nid d'oiseau",
-            "Pâte d'Arachide",
-            "Poisson braise",
-            "Poisson Kédjénou",
-            "Rougail Saucisse",
-            "Rougail Poisson",
-            "Sauce Gombo",
-            "Sauce Arachide",
-            "Sauce Aubergine",
-            "Sauce Clou de Girofle",
-            "Sauce Goyave",
-            "Sauce Piment",
-            "Soupe Kplala",
-            "Soupe de Feuilles de Manioc",
-            "Soupe de Feuilles de Patate Douce",
-            "Soupe de Gombo",
-            "Soupe de Kandja",
-            "Soupe de Niébé",
-            "Soupe de Poisson",
-            "Soupe de Riz",
-            "Soupe Jaune",
-            "Tô",
-            "Wakapate"
+            'Attieké', 'Foutou Banane', 'Foutou Igname', 'Garba', 'Choukouya', 'Poulet DG', 'Kedjenou de poulet',
+            'Alloco', 'Aloko avec poisson braisé', 'Bouillie', "Bouillie d'arachide", 'Braffet', 'Cabri Massala',
+            'Chikwangue', 'Crevettes Grillees', 'Djoumblé', 'Klaklo', 'Kédjénou de poulet', 'Gbofloto', 'Igname Glacée',
+            'Kédjénou de Poisson', 'Lafindé', 'Mafé', 'Moussoukou', "Nid d'oiseau", "Pâte d'Arachide", 'Poisson braise',
+            'Poisson Kédjénou', 'Rougail Saucisse', 'Rougail Poisson', 'Sauce Gombo', 'Sauce Arachide', 'Sauce Aubergine',
+            'Sauce Clou de Girofle', 'Sauce Goyave', 'Sauce Piment', 'Soupe Kplala', 'Soupe de Feuilles de Manioc',
+            'Soupe de Feuilles de Patate Douce', 'Soupe de Gombo', 'Soupe de Kandja', 'Soupe de Niébé',
+            'Soupe de Poisson', 'Soupe de Riz', 'Soupe Jaune', 'Tô', 'Wakapate',
         ];
 
         // Sélection aléatoire d'un nom de plat ivoirien
