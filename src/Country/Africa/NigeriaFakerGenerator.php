@@ -143,12 +143,12 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     function city($region)
     {
         $villesParRegion = [
-            "Northwest" => ["Kano", "Kaduna", "Sokoto", "Katsina", "Zamfara", "Kebbi", "Jigawa"],
-            "Northeast" => ["Borno", "Adamawa", "Yobe", "Bauchi", "Gombe", "Taraba"],
-            "North Central" => ["Benue", "Kogi", "Kwara", "Niger", "Plateau", "Nasarawa", "FCT - Abuja"],
-            "Southwest" => ["Lagos", "Ogun", "Oyo", "Osun", "Ekiti", "Ondo"],
-            "Southeast" => ["Enugu", "Anambra", "Imo", "Abia", "Ebonyi"],
-            "South-South" => ["Rivers", "Delta", "Akwa Ibom", "Cross River", "Bayelsa", "Edo"],
+            "Northwest" => ["Kano", "Kaduna", "Sokoto", "Zaria", "Katsina"],
+            "Northeast" => ["Maiduguri", "Yola", "Bauchi", "Gombe", "Damaturu"],
+            "North Central" => ["Abuja", "Jos", "Ilorin", "Makurdi", "Minna", "Lokoja"],
+            "Southwest" => ["Lagos", "Ibadan", "Abeokuta", "Akure", "Ado Ekiti"],
+            "Southeast" => ["Enugu", "Onitsha", "Owerri", "Aba", "Abakaliki"],
+            "South-South" => ["Port Harcourt", "Benin City", "Warri", "Calabar", "Uyo"],
         ];
 
         $villeAleatoire = $villesParRegion[$region][array_rand($villesParRegion[$region])];
@@ -158,35 +158,25 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
     public function cities()
     {
         $villes = [
-            "Lagos", "Abuja", "Kano", "Ibadan", "Kaduna", "Port Harcourt", "Benin City", "Maiduguri", "Jos", "Enugu",
-            "Aba", "Owerri", "Abeokuta", "Uyo", "Calabar", "Ilorin", "Warri", "Ogbomosho", "Zaria", "Gombe",
-            "Sokoto", "Bauchi", "Akure", "Makurdi", "Minna", "Osogbo", "Oyo", "Ado Ekiti", "Awka", "Yola",
-            "Lokoja", "Gusau", "Onitsha", "Umuahia", "Efon-Alaaye", "Mubi", "Ijebu-Ode", "Uromi", "Ondo", "Ikot Ekpene",
-            "Sagamu", "Ilawe-Ekiti", "Lafia", "Jalingo", "Okene", "Suleja", "Iseyin", "Ila", "Arochukwu", "Pindiga",
-            "Yenagoa", "Sapele", "Otukpo", "Afikpo", "Gbongan", "Ejigbo", "Bonny", "Kumo", "Wukari", "Ode",
-            "Ikirun", "Keffi", "Ikerre", "Ijero-Ekiti", "Owo", "Ikire", "Idanre", "Nkpor", "Saki", "Okrika",
-            "Buguma", "Geidam", "Uga", "Ughelli", "Bida", "Ugep", "Ifo", "Ilobu", "Shagamu", "Kabba",
-            "Ode", "Inisa", "Nnewi", "Igboho", "Okigwe", "Katsina-Ala", "Mokwa", "Isieke", "Epe", "Gwarzo",
-            "Gumel", "Soba", "Nasarawa", "Kaura Namoda", "Damaturu", "Numan", "Igbo-Ora", "Effium", "Yola", "Zungeru",
-            "Biu", "Gwaram", "Kontagora", "Potiskum", "Hadejia", "Ijebu Igbo", "Egbe", "Katsina", "Kamba", "Ise-Ekiti",
-            "Saki", "Okpoko", "Yenagoa", "Keffi", "Mokwa", "Funtua", "Ikare", "Enugu-Ukwu", "Bama", "Kaura Namoda",
-            "Gashua", "Lokoja", "Asaba", "Buguma", "Nnewi", "Uyo", "Ila", "Gwagwalada", "Okrika", "Gumel",
-            "Birnin Kebbi", "Funtua", "Nguru", "Gumel", "Malumfashi", "Sakaba", "Kamba", "Ughelli", "Bama", "Abeokuta",
-            "Jega", "Sokoto", "Gbongan", "Pankshin", "Igboho", "Okigwe", "Katsina-Ala", "Modakeke", "Ede", "Abejukolo",
-            "Ogoja", "Awka", "Kabba", "Onueke", "Igbo-Ora", "Awgu", "Ibi", "Eha Amufu", "Okada", "Jalingo",
-            "Ido Ekiti", "Nnewi", "Ibi", "Obubra", "Ikire", "Nkwerre", "Takum", "Nkpor", "Owerri", "Owerri",
-            "Oke Mesi", "Ezillo", "Eket", "Fufu", "Aku", "Garko", "Asaba", "Ugbodo", "Ijebu-Jesa", "Ijebu-Jesa",
-            "Tambuwal", "Potiskum", "Yola", "Kumo", "Nafada", "Kontagora", "Kontagora", "Jahun", "Daura", "Daura", "Sokoto",
-            "Sokoto", "Sokoto", "Birnin Kebbi", "Birnin Kebbi", "Argungu", "Argungu", "Kano", "Kano", "Kano", "Kano",
-            "Gwaram", "Gwaram", "Gombe", "Gombe", "Kumo", "Kumo", "Kaltungo", "Kaltungo", "Dutse", "Dutse", "Hadejia",
-            "Hadejia", "Nguru", "Nguru", "Biu", "Biu", "Bama", "Bama", "Potiskum", "Potiskum", "Damaturu", "Damaturu",
-            "Gashua", "Gashua", "Funtua", "Funtua", "Zaria", "Zaria", "Birnin Kudu", "Birnin Kudu", "Katsina", "Katsina",
-            "Katsina", "Katsina", "Katsina", "Katsina", "Dutsin Ma", "Dutsin Ma", "Kankara", "Kankara", "Kankara", "Kankara",
-            "Daura", "Daura", "Safana", "Safana", "Bakori", "Bakori", "Danja", "Danja", "Batsari", "Batsari", "Faskari",
-            "Faskari", "Sabuwa", "Sabuwa", "Mashi", "Mashi", "Ingawa", "Ingawa", "Sandamu", "Sandamu", "Jibia", "Jibia",
-            "Kaita", "Kaita", "Malumfashi", "Malumfashi", "Kafur", "Kafur", "Kankia", "Kankia", "Rimi", "Rimi", "Zurmi",
-            "Zurmi", "Shinkafi", "Shinkafi", "Maradun", "Maradun", "Maru", "Maru", "Bungudu", "Bungudu", "Gummi", "Gummi",
-            "Birnin Magaji/Kiyawa", "Birnin Magaji/Kiyawa", "Tsafe", "Tsafe", "Gusau", "Gusau", "Shinkafi", "Shinkafi", "Bakura", "Bakura"
+            'Lagos', 'Abuja', 'Kano', 'Ibadan', 'Kaduna', 'Port Harcourt', 'Benin City', 'Maiduguri', 'Jos', 'Enugu',
+            'Aba', 'Owerri', 'Abeokuta', 'Uyo', 'Calabar', 'Ilorin', 'Warri', 'Ogbomosho', 'Zaria', 'Gombe',
+            'Sokoto', 'Bauchi', 'Akure', 'Makurdi', 'Minna', 'Osogbo', 'Oyo', 'Ado Ekiti', 'Awka', 'Yola',
+            'Lokoja', 'Gusau', 'Onitsha', 'Umuahia', 'Efon-Alaaye', 'Mubi', 'Ijebu-Ode', 'Uromi', 'Ondo', 'Ikot Ekpene',
+            'Sagamu', 'Ilawe-Ekiti', 'Lafia', 'Jalingo', 'Okene', 'Suleja', 'Iseyin', 'Ila', 'Arochukwu', 'Pindiga',
+            'Yenagoa', 'Sapele', 'Otukpo', 'Afikpo', 'Gbongan', 'Ejigbo', 'Bonny', 'Kumo', 'Wukari', 'Ode',
+            'Ikirun', 'Keffi', 'Ikerre', 'Ijero-Ekiti', 'Owo', 'Ikire', 'Idanre', 'Nkpor', 'Saki', 'Okrika',
+            'Buguma', 'Geidam', 'Uga', 'Ughelli', 'Bida', 'Ugep', 'Ifo', 'Ilobu', 'Shagamu', 'Kabba',
+            'Inisa', 'Nnewi', 'Igboho', 'Okigwe', 'Katsina-Ala', 'Mokwa', 'Isieke', 'Epe', 'Gwarzo',
+            'Gumel', 'Soba', 'Nasarawa', 'Kaura Namoda', 'Damaturu', 'Numan', 'Igbo-Ora', 'Effium', 'Zungeru',
+            'Biu', 'Gwaram', 'Kontagora', 'Potiskum', 'Hadejia', 'Ijebu Igbo', 'Egbe', 'Katsina', 'Kamba', 'Ise-Ekiti',
+            'Okpoko', 'Funtua', 'Ikare', 'Enugu-Ukwu', 'Bama', 'Gashua', 'Asaba', 'Gwagwalada',
+            'Birnin Kebbi', 'Nguru', 'Malumfashi', 'Sakaba', 'Jega', 'Pankshin', 'Modakeke', 'Ede', 'Abejukolo',
+            'Ogoja', 'Onueke', 'Awgu', 'Ibi', 'Eha Amufu', 'Okada', 'Ido Ekiti', 'Obubra', 'Nkwerre', 'Takum',
+            'Oke Mesi', 'Ezillo', 'Eket', 'Fufu', 'Aku', 'Garko', 'Ugbodo', 'Ijebu-Jesa',
+            'Tambuwal', 'Nafada', 'Jahun', 'Daura', 'Argungu', 'Kaltungo', 'Dutse', 'Birnin Kudu',
+            'Dutsin Ma', 'Kankara', 'Safana', 'Bakori', 'Danja', 'Batsari', 'Faskari', 'Sabuwa', 'Mashi', 'Ingawa',
+            'Sandamu', 'Jibia', 'Kaita', 'Kafur', 'Kankia', 'Rimi', 'Zurmi', 'Shinkafi', 'Maradun', 'Maru',
+            'Bungudu', 'Gummi', 'Birnin Magaji/Kiyawa', 'Tsafe', 'Bakura',
         ];
 
         return $villes[array_rand($villes)];
@@ -195,15 +185,15 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     function coordinates()
     {
-        // Limites géographiques du Cameroun (latitude et longitude)
+        // Limites géographiques du Nigeria (latitude et longitude)
         $limites = [
-            'nord' => 13.8922,   // Latitude Nord
-            'sud' => 4.2774,     // Latitude Sud
-            'ouest' => 3.4982,   // Longitude Ouest
-            'est' => 14.6774     // Longitude Est
+            'nord' => 13.8922,
+            'sud' => 4.2774,
+            'ouest' => 2.6684,
+            'est' => 14.6774,
         ];
 
-        // Génération de coordonnées aléatoires dans les limites du Cameroun
+        // Génération de coordonnées aléatoires dans les limites du Nigeria
         $latitude = $limites['sud'] + mt_rand() / mt_getrandmax() * ($limites['nord'] - $limites['sud']);
         $longitude = $limites['ouest'] + mt_rand() / mt_getrandmax() * ($limites['est'] - $limites['ouest']);
 
@@ -274,7 +264,7 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@234.ngr';
+        $suffix = '@example.ng';
 
         return $username . $suffix;
     }
@@ -338,17 +328,7 @@ class NigeriaFakerGenerator extends BaseGenerator implements FakerGeneratorInter
 
     public function username()
     {
-
-        $firstName = $this->first_name;
-        $lastName = $this->last_name;
-
-        // Générez un nombre aléatoire à ajouter au nom d'utilisateur
-        $randomNumber = rand(100, 999);
-
-        // Concaténez le prénom, le nom de famille et le numéro aléatoire pour former le nom d'utilisateur
-        $username = strtolower($firstName . $lastName . $randomNumber);
-
-        return $username;
+        return strtolower($this->first_name() . $this->last_name() . rand(100, 999));
     }
 
     function product()

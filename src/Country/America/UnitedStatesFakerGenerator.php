@@ -137,23 +137,20 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
     public function city($region)
     {
         $villesParRegion = [
-            "New England" => ["Connecticut", "Maine", "Massachusetts", "New Hampshire", "Rhode Island", "Vermont"],
-            "Mid-Atlantic" => ["New York", "New Jersey", "Pennsylvania"],
-            "Deep South" => ["Alabama", "Georgia", "Louisiana", "Mississippi", "South Carolina"],
-            "Southeast Coast" => ["Florida", "North Carolina", "Virginia"],
-            "Heartland" => ["Illinois", "Indiana", "Michigan", "Ohio", "Wisconsin"],
-            "Southwest" => ["Arizona", "New Mexico", "Texas", "Nevada", "Oklahoma"],
-            "Pacific Coast" => ["California", "Oregon", "Washington"],
-            "Mountain West" => ["Colorado", "Idaho", "Montana", "Utah", "Wyoming"],
-            "Rocky Mountains" => ["Colorado", "Montana", "Wyoming"],
-            "Great Plains" => ["Kansas", "Nebraska", "North Dakota", "South Dakota"],
-            "Alaska" => ["Alaska"],
-            "Hawaii" => ["Hawaii"],
-            "Mid-Atlantic" => ["Delaware", "Maryland"],
-            "South Central" => ["Arkansas", "Oklahoma"],
-
-            "Gulf Coast" => ["Texas", "Louisiana", "Mississippi", "Alabama", "Florida"],
-
+            "New England" => ["Boston", "Providence", "Hartford", "Portland", "Burlington"],
+            "Mid-Atlantic" => ["New York", "Philadelphia", "Baltimore", "Newark", "Pittsburgh"],
+            "Deep South" => ["Atlanta", "Birmingham", "New Orleans", "Jackson", "Charleston"],
+            "Southeast Coast" => ["Miami", "Orlando", "Charlotte", "Raleigh", "Virginia Beach"],
+            "Heartland" => ["Chicago", "Detroit", "Cleveland", "Indianapolis", "Milwaukee"],
+            "Southwest" => ["Houston", "Dallas", "Phoenix", "Austin", "San Antonio"],
+            "Pacific Coast" => ["Los Angeles", "San Francisco", "Seattle", "San Diego", "Portland"],
+            "Mountain West" => ["Denver", "Salt Lake City", "Boise", "Cheyenne", "Billings"],
+            "Rocky Mountains" => ["Denver", "Colorado Springs", "Missoula", "Casper"],
+            "Great Plains" => ["Omaha", "Kansas City", "Fargo", "Sioux Falls", "Wichita"],
+            "Alaska" => ["Anchorage", "Fairbanks", "Juneau"],
+            "Hawaii" => ["Honolulu", "Hilo", "Kailua"],
+            "South Central" => ["Oklahoma City", "Little Rock", "Tulsa", "Memphis"],
+            "Gulf Coast" => ["Houston", "New Orleans", "Mobile", "Tampa", "Corpus Christi"],
         ];
 
         $villeAleatoire = $villesParRegion[$region][array_rand($villesParRegion[$region])];
@@ -180,15 +177,15 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
 
     public function coordinates()
     {
-        // Limites géographiques du Cameroun (latitude et longitude)
+        // Limites géographiques des États-Unis (latitude et longitude)
         $limites = [
-            'north' => 49.384358,    // Northernmost point (Northwest Angle, Minnesota)
-            'south' => 24.396308,    // Southernmost point (Key West, Florida)
-            'west' => -125.000000,   // Westernmost point (Point Arena, California)
-            'east' => -66.934570     // Easternmost point (Quoddy Head, Maine)
+            'north' => 49.384358,
+            'south' => 24.396308,
+            'west' => -125.000000,
+            'east' => -66.934570,
         ];
 
-        // Génération de coordonnées aléatoires dans les limites du Cameroun
+        // Génération de coordonnées aléatoires dans les limites des États-Unis
         $latitude = $limites['south'] + mt_rand() / mt_getrandmax() * ($limites['north'] - $limites['south']);
         $longitude = $limites['west'] + mt_rand() / mt_getrandmax() * ($limites['east'] - $limites['west']);
 
@@ -276,7 +273,7 @@ class UnitedStatesFakerGenerator extends BaseGenerator implements FakerGenerator
         $username = $this->last_name() . rand(1, 100);
 
         // Le suffixe de l'adresse e-mail
-        $suffix = '@1.com';
+        $suffix = '@example.com';
 
         return $username . $suffix;
     }

@@ -32,20 +32,16 @@ class FranceFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
     public function last_name()
     {
         $lastNames = [
-            'Leclerc', 'Lapierre', 'Moreau', 'Lemieux', 'Morin', 'Dubé', 'Larose', 'Bergeron', 'Bouchard', 'Grenier',
-            'Beaulieu', 'Caron', 'Mercier', 'Tremblay', 'Pelletier', 'Gagné', 'Renaud', 'Roy', 'Lévesque', 'Lapointe',
-            'Richard', 'Léger', 'Desjardins', 'Deschamps', 'Marchand', 'Bélanger', 'Fontaine', 'Thibault', 'Côté', 'Dion',
-            'Martel', 'Gagnon', 'Giroux', 'Boucher', 'Hébert', 'Poirier', 'Simard', 'Bernier', 'Turcotte', 'Lefebvre',
-            'Plante', 'Cormier', 'Bertrand', 'Dufour', 'Boisvert', 'Lachance', 'Lemay', 'Couture', 'Trudeau', 'Daigle',
-            'Lamontagne', 'Paquette', 'Beauchamp', 'Paradis', 'Fournier', 'Boudreau', 'Lessard', 'Perreault', 'Leblanc',
-            'Ouellet', 'Savard', 'Rivard', 'Girard', 'Tanguay', 'Gosselin', 'Gauthier', 'Bolduc', 'Bérubé', 'Séguin',
-            'Picard', 'Vachon', 'Lemelin', 'Lajoie', 'Rioux', 'Thériault', 'Lafontaine', 'Blanchard', 'Couturier',
-            'Guillemette', 'Boivin', 'Hamel', 'Lussier', 'Desrochers', 'Ferland', 'Leclair', 'Landry', 'Sirois',
-            'Doré', 'Perron', 'Dubois', 'Lavoie', 'Michaud', 'Demers', 'Martin', 'Tardif', 'Fortin', 'Poulin',
-            'Létourneau', 'Dionne', 'Perrault', 'Allard', 'Paré', 'Lafond', 'Champagne', 'Vézina', 'Charbonneau',
-            'Marcoux', 'Thibodeau', 'Noël', 'Nadeau', 'Fortier', 'Leduc', 'Boulet', 'Lalonde', 'Ouellette', 'Ménard',
-            'Goulet', 'Blais', 'Morneau', 'Bellemare', 'Houle', 'Turgeon', 'Robitaille', 'Cloutier', 'Larouche',
-            'Lauzon', 'Larocque', 'Dallaire', 'Carrière', 'Legault', 'Desroches', 'Beaudoin', 'Rousseau', 'Pouliot',
+            'Martin', 'Bernard', 'Dubois', 'Thomas', 'Robert', 'Richard', 'Petit', 'Durand', 'Leroy', 'Moreau',
+            'Simon', 'Laurent', 'Lefebvre', 'Michel', 'Garcia', 'David', 'Bertrand', 'Roux', 'Vincent', 'Fournier',
+            'Morel', 'Girard', 'André', 'Lefèvre', 'Mercier', 'Dupont', 'Lambert', 'Bonnet', 'François', 'Martinez',
+            'Legrand', 'Garnier', 'Faure', 'Rousseau', 'Blanc', 'Guérin', 'Muller', 'Henry', 'Roussel', 'Nicolas',
+            'Perrin', 'Morin', 'Mathieu', 'Clément', 'Gauthier', 'Dumont', 'Lopez', 'Fontaine', 'Chevalier', 'Robin',
+            'Masson', 'Sanchez', 'Gérard', 'Nguyen', 'Boyer', 'Denis', 'Duval', 'Joly', 'Gautier', 'Royer',
+            'Colin', 'Arnaud', 'Vidal', 'Caron', 'Picard', 'Roger', 'Fabre', 'Aubert', 'Renaud', 'Dumas',
+            'Brun', 'Dufour', 'Leroux', 'Collet', 'Prévost', 'Poirier', 'Marchand', 'Lemoine', 'Renard', 'Leclerc',
+            'Pelletier', 'Lecomte', 'Barbier', 'Brunet', 'Guillaume', 'Adam', 'Rey', 'Moulin', 'Gonzalez', 'Berger',
+            'Lucas', 'Benoit', 'Lemaire', 'Meyer', 'Luc', 'Dufour', 'Olivier', 'Philippe', 'Pierre', 'Louis',
         ];
 
         return $lastNames[array_rand($lastNames)];
@@ -163,7 +159,7 @@ class FranceFakerGenerator extends BaseGenerator implements FakerGeneratorInterf
 
     public function email()
     {
-        return $this->last_name() . rand(1, 100) . '@33.fr';
+        return strtolower($this->last_name() . rand(1, 100) . '@example.fr');
     }
 
     public function date($startDate = '-30 years', $endDate = 'now', $format = 'Y-m-d')
